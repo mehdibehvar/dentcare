@@ -1,0 +1,13 @@
+.banner_title{
+    word-spacing: 2px;
+    margin: 0 0 10px;
+    text-transform: capitalize;
+    color: #000;
+    line-height: 66px;
+    width: 830px;
+    @media screen and (max-width:600px) {
+       width: 300px;
+       font-size: 20px;
+       line-height: 20px;
+    }
+}

@@ -1,0 +1,30 @@
+.logoWrapper {
+  width: 40%;
+  height: 100%;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 10px;
+  padding-left: 30px;
+  position: absolute;
+  left: -25px;
+  
+  .logo {
+    font-size: 30px;
+  }
+  .logoName {
+    padding-top: 21px;
+  }
+}
+.logoWrapper::after {
+    content: '';
+    position: absolute;
+    right: -15px;
+    width: 40px;
+    height: 40px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    z-index: 1;
+    background-color: #fafafa;
+  }

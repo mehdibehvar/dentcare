@@ -1,26 +1,35 @@
+@font-face {
+  font-family: Vazirmatn-RD;
+  src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Round-Dots/fonts/webfonts/Vazirmatn-RD[wght].woff2') format('woff2 supports variations'),
+       url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Round-Dots/fonts/webfonts/Vazirmatn-RD[wght].woff2') format('woff2-variations');
+  font-weight:100 900;
+  font-style: normal;
+  font-display: swap;
+}
+*{
+  font-family: Vazirmatn-RD;
+}
 html,
 body {
   padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  margin:0;
+  text-align:right;
+    line-height:1.1;
+    font-weight: 400;
+    font-size: 16px;
 }
-
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin:0;
+}
 a {
   color: inherit;
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+li{
+  list-style: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-}
+
