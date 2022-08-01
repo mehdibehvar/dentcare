@@ -6,7 +6,7 @@ export default function Navbar() {
     const Navbar=styled("nav")(()=>({
         zIndex: "99",
         position:"sticky",
-        top:"0",
+        top:"-10px",
         width: "100%",
         padding: "10px 0",
         overflow: "hidden",

@@ -11,13 +11,13 @@ import { createTheme } from "@mui/material";
             light:"#0facef"
         },
         text:{
-            primary:"#000000",
+            primary:"#333333",
             secondary:"#666666",
             disabled:"#999999"
         },
         background:{
             paper:"#FFFFFF",
-            menue:"rgba(83, 189, 236, 0.8)"
+            default:"#FAFAFA",
         }
     }
 })

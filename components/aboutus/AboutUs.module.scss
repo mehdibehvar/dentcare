@@ -1,0 +1,27 @@
+.treatIcon{
+    position: relative;
+    margin: 20px 20px 5px 0px;
+    
+    &::after{
+        border: 1px solid #0FACEF;
+        content: '';
+        position: absolute;
+        width: 40px;
+        margin: auto;
+        top: 9px;
+        height: -1px;
+        right:-44px;
+      
+    }
+    &::before{
+        border: 1px solid #0FACEF;
+        content: '';
+        position: absolute;
+        width: 40px;
+        margin: auto;
+        top: 9px;
+        height: -1px;
+        right: 22px;
+      
+    }
+}

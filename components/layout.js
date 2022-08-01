@@ -8,9 +8,9 @@ export default function Layout({children}) {
   return (
     <>
         <Head>
-            <title>mehdishop online shop</title>
+            <title>BitaCare website</title>
             <meta name="viewport" content="initial-scale=1, width=device-width" />
-            <meta name='mehdishop'  content='best online shop' />
+            <meta name='mehdishop'  content='best dentist in bushehr' />
         </Head>
         <TopBar/>
           <Box sx={{backgroundColor:"#FFFFF"}}>

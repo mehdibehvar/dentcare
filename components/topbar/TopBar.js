@@ -11,11 +11,6 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
 
 export default function TopBar() {
-   const MyCallIcon=styled("span")(({theme})=>({
-    [theme.breakpoints.up("md")]:{
-      color:red[500]
-    }
-   }))
   return (
 <Box className={topbarClasses.topbar} >
 <Grid container>
