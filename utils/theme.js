@@ -8,7 +8,7 @@ import { createTheme } from "@mui/material";
     palette:{
         primary:{
             main:"#0FACEF",
-            light:"#0facef"
+            light:"#0facef",
         },
         text:{
             primary:"#333333",

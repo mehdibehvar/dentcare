@@ -29,5 +29,13 @@ const data = {
         "10 سال تجربه کاری"],
     }
 ],
+servicesInfo:[
+  {title:"سفید کردن دندان",avatar:"assets/images/service6.png",description:"با جدیدترین متدهای درمان و سفید کردن دندان در خدمت شما هستیم."},
+  {title:"مشاوره",avatar:"assets/images/service6.png",description:"با جدیدترین متدهای درمان و سفید کردن دندان در خدمت شما هستیم."},
+  {title:"عصب کشی",avatar:"assets/images/service6.png",description:"با جدیدترین متدهای درمان و سفید کردن دندان در خدمت شما هستیم."},
+  {title:"ریشه کانال",avatar:"assets/images/service6.png",description:"با جدیدترین متدهای درمان و سفید کردن دندان در خدمت شما هستیم."},
+  {title:"دندان عقل",avatar:"assets/images/service6.png",description:"با جدیدترین متدهای درمان و سفید کردن دندان در خدمت شما هستیم."},
+  {title:"ایمپلنت",avatar:"assets/images/service6.png",description:"با جدیدترین متدهای درمان و سفید کردن دندان در خدمت شما هستیم."}
+]
 };
 export default data;
