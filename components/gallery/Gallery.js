@@ -1,46 +1,30 @@
-import styled from "@emotion/styled";
 import {
-  Box,
   Container,
   Grid,
-  ImageList,
-  ImageListItem,
   Typography,
 } from "@mui/material";
 import { GraySection } from "components/aboutus/aboutusStyledComponents";
 import TreatIcon from "components/other/TreatIcon";
 import Image from "next/image";
 import data from "utils/data";
-import SettingsOverscanIcon from '@mui/icons-material/SettingsOverscan';
- const ImageWrapper=styled("div")(({theme})=>({
-      marginBottom:theme.spacing(2),
-      borderRadius:8,
-      overflow:"hidden",
-      transition:"1s ease",
-      "& svg":{visibility:"hidden",position:"absolute" ,top:"0",transition:"all 2s ease-in"},
-      ":hover":{
-      transform:"scale(1.05)",
-        opacity:"0.5",
-        "& div":{
-            backgroundColor:"black",
-            opacity:"0.5",
-            position:"absolute",
-            width:"400px",
-            height:"100%",
-            top:0
-         },
-         "& svg":{
-            visibility:"visible",
-            top:"50%",
-            right:"50%",
-            transform:"translate(50%,25%)",
-            zIndex:"33"
-         }
-      }
- }))
-
+import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
+import galleryClasses from "./Gallery.module.scss"
+import { useState } from "react";
 export default function Gallery() {
-    const {gallery:itemData}=data;
+  const [fullScreen,setFullscreen]=useState(false);
+  const handleFullScreen=(e)=>{
+    setFullscreen(true)
+  
+    e.target.parentElement.classList.add(galleryClasses.showFull);
+    e.target.parentElement.children[0].classList.add(galleryClasses.showcloseIcon)
+  }
+const handleCloseFullScreen=(e)=>{
+  setFullscreen(false)
+  console.log(fullScreen);
+  e.target.parentElement.classList.remove(galleryClasses.showFull);
+  e.target.parentElement.children[0].classList.remove(galleryClasses.showcloseIcon)
+}
+
   return (
     <GraySection>
       <Container>
@@ -61,72 +45,94 @@ export default function Gallery() {
         </Grid>
    <Grid container spacing={2}>
    <Grid item xs={4} sm={4} md={4} lg={4}>
-        <ImageWrapper>
+        <div className={galleryClasses.imageWrapper} >
+        <CloseFullscreenIcon onClick={handleCloseFullScreen} />    
             <Image 
             src="/assets/images/gallery6.png"
             alt="bitacare"
             width={400}
             height={515}
             layout="responsive"
-            />           
-        </ImageWrapper>
-        <ImageWrapper>
+            />   
+                         <div className={fullScreen?galleryClasses.noBlur:null}>
+            </div> 
+            <i className={`fa fa-arrows-alt ${fullScreen?galleryClasses.noExpandIcon:null}`} onClick={handleFullScreen}></i>        
+        </div>
+        <div className={galleryClasses.imageWrapper} >
+        <CloseFullscreenIcon onClick={handleCloseFullScreen} />    
             <Image 
             src="/assets/images/gallery7.png"
             alt="bitacare"
             width={400}
             height={300}
             layout="responsive"
-            />           
-        </ImageWrapper>
+            />    
+                         <div className={fullScreen?galleryClasses.noBlur:null}>
+            </div> 
+            <i className={`fa fa-arrows-alt ${fullScreen?galleryClasses.noExpandIcon:null}`} onClick={handleFullScreen}></i>       
+        </div>
         
     </Grid>
     <Grid item xs={4} sm={4} md={4} lg={4}>
-        <ImageWrapper>
+        <div className={galleryClasses.imageWrapper} >
+        <CloseFullscreenIcon onClick={handleCloseFullScreen} />    
             <Image 
             src="/assets/images/gallery3.png"
             alt="bitacare"
             width={400}
             height={300}
             layout="responsive"
-            />           
-        </ImageWrapper>
-        <ImageWrapper>
+            />  
+                         <div className={fullScreen?galleryClasses.noBlur:null}>
+            </div> 
+            <i className={`fa fa-arrows-alt ${fullScreen?galleryClasses.noExpandIcon:null}`} onClick={handleFullScreen}></i>         
+        </div>
+        <div className={galleryClasses.imageWrapper}  >
+        <CloseFullscreenIcon onClick={handleCloseFullScreen} />    
             <Image 
             src="/assets/images/gallery4.png"
             alt="bitacare"
             width={400}
             height={250}
             layout="responsive"
-            />           
-        </ImageWrapper>
-        <ImageWrapper>
+            />  
+                         <div className={fullScreen?galleryClasses.noBlur:null}>
+            </div> 
+            <i className={`fa fa-arrows-alt ${fullScreen?galleryClasses.noExpandIcon:null}`} onClick={handleFullScreen}></i>         
+        </div>
+        <div className={galleryClasses.imageWrapper} >
+        <CloseFullscreenIcon onClick={handleCloseFullScreen} />    
             <Image 
             src="/assets/images/gallery5.png"
             alt="bitacare"
             width={400}
             height={250}
             layout="responsive"
-            />           
-        </ImageWrapper>
+            />  
+            <div className={fullScreen?galleryClasses.noBlur:null}>
+            </div> 
+            <i className={`fa fa-arrows-alt ${fullScreen?galleryClasses.noExpandIcon:null}`} onClick={handleFullScreen}></i>         
+        </div>
         
     </Grid>
 
     <Grid item xs={4} sm={4} md={4} lg={4}>
-        <ImageWrapper>
-        <SettingsOverscanIcon/>
+        <div className={galleryClasses.imageWrapper} >
+          <CloseFullscreenIcon onClick={handleCloseFullScreen} />         
            <Image 
             src="/assets/images/gallery1.png"
             alt="bitacare"
             width={400}
             height={300}
             layout="responsive"
+       
             /> 
-             <div>
-            </div>          
-            
-        </ImageWrapper>
-        <ImageWrapper>
+             <div className={fullScreen?galleryClasses.noBlur:null}>
+            </div> 
+            <i className={`fa fa-arrows-alt ${fullScreen?galleryClasses.noExpandIcon:null}`} onClick={handleFullScreen}></i>
+        </div>
+        <div className={galleryClasses.imageWrapper} >
+        <CloseFullscreenIcon onClick={handleCloseFullScreen} />  
             <Image 
             src="/assets/images/gallery2.png"
             alt="bitacare"
@@ -134,8 +140,10 @@ export default function Gallery() {
             height={515}
             layout="responsive"
             />  
-                     
-        </ImageWrapper>
+             <div className={fullScreen?galleryClasses.noBlur:null}>
+            </div> 
+            <i className={`fa fa-arrows-alt ${fullScreen?galleryClasses.noExpandIcon:null}`} onClick={handleFullScreen}></i>
+        </div>
         
     </Grid>
    </Grid>

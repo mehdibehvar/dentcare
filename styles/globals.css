@@ -31,5 +31,13 @@ a {
 li{
   list-style: none;
 }
+/* .showFull{
+  object-fit: contain;
+  position: fixed;
+  z-index: 999;
+  top: 25%;
+  right: 25%;
+  width: 50vw;
+  height: 50vh;
 
-
+} */
