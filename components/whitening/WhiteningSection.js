@@ -3,8 +3,7 @@ import styled from "@emotion/styled";
 import { Container, Grid, IconButton, Tooltip, Typography } from "@mui/material";
 import { HeroSection } from "components/other/styledComponents";
 import TreatIcon from "components/other/TreatIcon";
-import Image from "next/image";
-import  { useEffect, useRef, useState } from "react";
+import  { useEffect, useRef } from "react";
 import FlipIcon from "@mui/icons-material/Flip";
 const WhiteningFrame = styled("div")({
   width: "100%",
@@ -45,15 +44,15 @@ const FlipIconWrapper=styled("span")(({theme})=>({
     alignItems:"center",
     justifyContent:"center",
      "button":{
-        fontSize:30,
         cursor:"w-resize",
         backgroundColor:theme.palette.primary.main,
+  
         ":hover":{
             backgroundColor:"rgba(83, 189, 236, 0.6)"
         }
      },
      "svg":{
-        fontSize:30,
+        fontSize:20,
         color:"#fff"
      }
 
@@ -67,8 +66,7 @@ export default function WhiteningSection() {
         const movement=e.pageX-frameRef.current.offsetLeft;
         const frameWidth=frameRef.current.clientWidth
        const percent=100-(movement/frameWidth)*100;
-       console.log(percent)
-       if(percent<=100 && percent>=5){
+       if(percent<=97 && percent>=2){
         fliperRef.current.style.right=`${percent}%`;
         afterRef.current.style.width=`${percent}%`;
        }
@@ -79,8 +77,8 @@ export default function WhiteningSection() {
             draggableIconRef.current.addEventListener("dragstart",(e)=>animateFliper(e));
             draggableIconRef.current.addEventListener("drag",(e)=>animateFliper(e));
             draggableIconRef.current.addEventListener("dragend",(e)=>animateFliper(e));
-            frameRef.current.addEventListener("dragover",(event)=>{
-                event.preventDefault()
+            draggableIconRef.current.addEventListener("dragover",(e)=>{
+                e.preventDefault()
             },false)
             frameRef.current.addEventListener("drop",(e)=>animateFliper(e))
     },[])
@@ -103,7 +101,7 @@ export default function WhiteningSection() {
           </Typography>
         </Grid>
         <Grid container sx={{ display: "flex", justifyContent: "center" }}>
-          <Grid item xs={6}>
+          <Grid item xs={10} sm={6}>
             <WhiteningFrame ref={frameRef}>
               <img
                 src="/assets/images/before.png"
@@ -120,11 +118,11 @@ export default function WhiteningSection() {
                </div>
               </AfterWrapper>
               <FlipIconWrapper ref={fliperRef}>
-              <Tooltip title="قبل و بعد ">
-              <IconButton draggable={true} onClick={(e)=>setMouseDown(true)} ref={draggableIconRef}  aria-label="" className="flipButton">
+          
+              <IconButton draggable={true} ref={draggableIconRef}>
                   <FlipIcon />
                 </IconButton>
-                </Tooltip>
+
                
               </FlipIconWrapper>
             </WhiteningFrame>
