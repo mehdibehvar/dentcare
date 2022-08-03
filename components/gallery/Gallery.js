@@ -6,7 +6,6 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
-import { GraySection } from "components/aboutus/aboutusStyledComponents";
 import TreatIcon from "components/other/TreatIcon";
 import Image from "next/image";
 import data from "utils/data";
@@ -16,6 +15,7 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import CloseIcon from '@mui/icons-material/Close';
 import { red } from "@mui/material/colors";
+import { GraySection } from "components/other/styledComponents";
 
 function srcset(image, size,rows = 1,cols = 1) {
   return {

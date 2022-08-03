@@ -1,5 +1,5 @@
 import { Container, Grid, Typography } from "@mui/material";
-import { LightSection } from "components/aboutus/aboutusStyledComponents";
+import { LightSection } from "components/other/styledComponents";
 import TreatIcon from "components/other/TreatIcon";
 import data from "utils/data";
 import ServiceBox from "./ServiceBox";

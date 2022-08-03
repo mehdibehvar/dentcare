@@ -67,11 +67,11 @@ gallery:[
     title: 'Laptop',
   },
   {
-    img: 'assets/images/gallery7.png',
+    img: 'assets/images/gallery9.png',
     title: 'Doors',
   },
   {
-    img: 'assets/images/gallery7.png',
+    img: 'assets/images/gallery8.png',
     title: 'Coffee',
   }
 ]

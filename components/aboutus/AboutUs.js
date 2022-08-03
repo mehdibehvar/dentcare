@@ -1,8 +1,9 @@
 import { Container, Grid, Typography } from "@mui/material";
+import { GraySection } from "components/other/styledComponents";
 import TreatIcon from "components/other/TreatIcon";
 import { useState } from "react";
 import data from "utils/data";
-import {  GraySection, Tab, TabList } from "./aboutusStyledComponents";
+import {  Tab, TabList } from "./aboutusStyledComponents";
 import TabContent from "./TabContent";
 
 export default function AboutUs() {

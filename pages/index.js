@@ -5,6 +5,7 @@ import Navbar from "components/navbar/Navbar"
 import AboutUs from 'components/aboutus/AboutUs';
 import OurServices from 'components/ourServices/OurServices';
 import Gallery from 'components/gallery/Gallery';
+import WhiteningSection from 'components/whitening/WhiteningSection';
 export default function Home() {
   return (
    <>
@@ -14,6 +15,7 @@ export default function Home() {
       <AboutUs/>
       <OurServices/> 
       <Gallery/>
+      <WhiteningSection/>
     </Layout>
    </>
   )

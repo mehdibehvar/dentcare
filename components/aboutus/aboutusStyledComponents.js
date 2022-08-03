@@ -1,13 +1,5 @@
 import styled from "@emotion/styled";
-  ////section style///////
-  export const GraySection = styled("section")(({ theme }) => ({
-    backgroundColor:theme.palette.background.default,
-    padding: "10px",
-  }));
-  export const LightSection = styled("section")(({ theme }) => ({
-    backgroundColor:theme.palette.background.paper,
-    padding: "10px",
-  }));
+
   ////how to use prop and theme in styled////////////////////////
   export const Tab = styled("li")(({ theme }) => (props) => ({
     backgroundColor: props.tabColor,
