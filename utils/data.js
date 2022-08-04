@@ -40,39 +40,39 @@ servicesInfo:[
 gallery:[
   {
     img: 'assets/images/gallery1.png',
-    title: 'Bed',
+    title: 'bitacare',
   },
   {
     img: 'assets/images/gallery2.png',
-    title: 'Books',
+    title: 'bitacare',
   },
   {
     img: 'assets/images/gallery3.png',
-    title: 'Sink',
+    title: 'bitacare',
   },
   {
     img: 'assets/images/gallery4.png',
-    title: 'Kitchen',
+    title: 'bitacare',
   },
   {
     img: 'assets/images/gallery5.png',
-    title: 'Blinds',
+    title: 'bitacare',
   },
   {
     img: 'assets/images/gallery7.png',
-    title: 'Chairs',
+    title: 'bitacare',
   },
   {
     img: 'assets/images/gallery6.png',
-    title: 'Laptop',
+    title: 'bitacare',
   },
   {
-    img: 'assets/images/gallery9.png',
-    title: 'Doors',
+    img: 'assets/images/gallery9.jpg',
+    title: 'bitacare',
   },
   {
-    img: 'assets/images/gallery8.png',
-    title: 'Coffee',
+    img: 'assets/images/gallery8.jpg',
+    title: 'bitacare',
   }
 ]
 };

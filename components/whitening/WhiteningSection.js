@@ -47,11 +47,13 @@ const FlipIconWrapper = styled("span")(({ theme }) => ({
   top: "0%",
   right: "50%",
   display: "flex",
-  alignItems: "center",
+  alignItems: "end",
   justifyContent: "center",
   button: {
     cursor: "w-resize",
     backgroundColor: theme.palette.primary.main,
+    zIndex:"1000",
+     
     ":hover": {
       backgroundColor: "rgba(83, 189, 236, 0.6)",
     },
@@ -66,28 +68,26 @@ export default function WhiteningSection() {
   const draggableIconRef = useRef();
   const afterRef = useRef();
   const frameRef = useRef();
-  const dragFliper = (e) => {
-    const frameRefRect = frameRef.current.getBoundingClientRect();
-    const movement = e.pageX - frameRefRect.left;
+
+  const flipStyle=(frameRefRect,movement)=>{
     const frameWidth = frameRefRect.width;
     const percent = 100 - (movement / frameWidth) * 100;
     if (percent <= 97 && percent >= 2) {
       fliperRef.current.style.right = `${percent}%`;
       afterRef.current.style.width = `${percent}%`;
     }
+  }
+  const dragFliper = (e) => {
+    const frameRefRect = frameRef.current.getBoundingClientRect();
+    const movement = e.pageX - frameRefRect.left;
+    flipStyle(frameRefRect,movement)
   };
   const touchFliper = (e) => {
-    console.log(e.targetTouches[0]);
     const touchLocation = e.targetTouches[0];
     const xcoords = touchLocation.pageX;
     const frameRefRect = frameRef.current.getBoundingClientRect();
     const movement = xcoords - frameRefRect.left;
-    const frameWidth = frameRefRect.width;
-    const percent = 100 - (movement / frameWidth) * 100;
-    if (percent <= 97 && percent >= 2) {
-      fliperRef.current.style.right = `${percent}%`;
-      afterRef.current.style.width = `${percent}%`;
-    }
+    flipStyle(frameRefRect,movement)
   };
   return (
     <HeroSection>
