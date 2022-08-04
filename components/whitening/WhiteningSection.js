@@ -1,88 +1,94 @@
 /* eslint-disable @next/next/no-img-element */
 import styled from "@emotion/styled";
-import { Container, Grid, IconButton, Tooltip, Typography } from "@mui/material";
+import {
+  Container,
+  Grid,
+  IconButton,
+  Tooltip,
+  Typography,
+} from "@mui/material";
 import { HeroSection } from "components/other/styledComponents";
 import TreatIcon from "components/other/TreatIcon";
-import  { useEffect, useRef } from "react";
+import { useRef } from "react";
 import FlipIcon from "@mui/icons-material/Flip";
 const WhiteningFrame = styled("div")({
   width: "100%",
   border: "8px solid white",
   position: "relative",
-  overflow:"hidden",
-  "img":{
-    display:"block",
-    width:"100%",
-    maxWidth:"none",
-    height:"100%",
-     verticalAlign:"middle",
+  overflow: "hidden",
+  img: {
+    display: "block",
+    width: "100%",
+    maxWidth: "none",
+    height: "100%",
+    verticalAlign: "middle",
   },
 });
 const AfterWrapper = styled("div")({
   width: "50%",
-  height:"100%",
+  height: "100%",
   position: "absolute",
-  overflow:"hidden",
-  right:0,
+  overflow: "hidden",
+  right: 0,
   top: 0,
-  "div":{
-    display:"block",
-    width:"max-content",
-    maxWidth:"none",
-  height:"inherit",
-    verticalAlign:"middle",
+  div: {
+    display: "block",
+    width: "max-content",
+    maxWidth: "none",
+    height: "inherit",
+    verticalAlign: "middle",
   },
 });
-const FlipIconWrapper=styled("span")(({theme})=>({
-    width:4,
-    height:"100%",
-    backgroundColor:theme.palette.background.paper,
-    position:"absolute",
-    top:"0%",
-    right:"50%",
-    display:"flex",
-    alignItems:"center",
-    justifyContent:"center",
-     "button":{
-        cursor:"w-resize",
-        backgroundColor:theme.palette.primary.main,
-        ":hover":{
-            backgroundColor:"rgba(83, 189, 236, 0.6)"
-        }
-     },
-     "svg":{
-        fontSize:20,
-        color:"#fff"
-     }
-
-}))
+const FlipIconWrapper = styled("span")(({ theme }) => ({
+  width: 4,
+  height: "100%",
+  backgroundColor: theme.palette.background.paper,
+  position: "absolute",
+  top: "0%",
+  right: "50%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  button: {
+    cursor: "w-resize",
+    backgroundColor: theme.palette.primary.main,
+    ":hover": {
+      backgroundColor: "rgba(83, 189, 236, 0.6)",
+    },
+  },
+  svg: {
+    fontSize: 20,
+    color: "#fff",
+  },
+}));
 export default function WhiteningSection() {
-    const fliperRef = useRef();
-    const draggableIconRef = useRef();
-    const afterRef=useRef();
-    const frameRef=useRef();
-    const animateFliper=(e)=>{
-      const frameRefRect=frameRef.current.getBoundingClientRect();
-        const movement=e.pageX-frameRefRect.left;
-        const frameWidth=frameRefRect.width;
-        console.log(frameRefRect);
-       const percent=100-(movement/frameWidth)*100;
-       if(percent<=97 && percent>=2){
-        fliperRef.current.style.right=`${percent}%`;
-        afterRef.current.style.width=`${percent}%`;
-       }
-        
-
+  const fliperRef = useRef();
+  const draggableIconRef = useRef();
+  const afterRef = useRef();
+  const frameRef = useRef();
+  const dragFliper = (e) => {
+    const frameRefRect = frameRef.current.getBoundingClientRect();
+    const movement = e.pageX - frameRefRect.left;
+    const frameWidth = frameRefRect.width;
+    const percent = 100 - (movement / frameWidth) * 100;
+    if (percent <= 97 && percent >= 2) {
+      fliperRef.current.style.right = `${percent}%`;
+      afterRef.current.style.width = `${percent}%`;
     }
-    useEffect(()=>{    
-            draggableIconRef.current.addEventListener("dragstart",(e)=>animateFliper(e));
-            draggableIconRef.current.addEventListener("drag",(e)=>animateFliper(e));
-            draggableIconRef.current.addEventListener("dragend",(e)=>animateFliper(e));
-            draggableIconRef.current.addEventListener("dragover",(e)=>{
-                e.preventDefault()
-            },false)
-            frameRef.current.addEventListener("drop",(e)=>animateFliper(e))
-    },[])
+  };
+  const touchFliper = (e) => {
+    console.log(e.targetTouches[0]);
+    const touchLocation = e.targetTouches[0];
+    const xcoords = touchLocation.pageX;
+    const frameRefRect = frameRef.current.getBoundingClientRect();
+    const movement = xcoords - frameRefRect.left;
+    const frameWidth = frameRefRect.width;
+    const percent = 100 - (movement / frameWidth) * 100;
+    if (percent <= 97 && percent >= 2) {
+      fliperRef.current.style.right = `${percent}%`;
+      afterRef.current.style.width = `${percent}%`;
+    }
+  };
   return (
     <HeroSection>
       <Container>
@@ -104,32 +110,21 @@ export default function WhiteningSection() {
         <Grid container sx={{ display: "flex", justifyContent: "center" }}>
           <Grid item xs={10} sm={6}>
             <WhiteningFrame ref={frameRef}>
-              <img
-                src="/assets/images/before.png"
-                alt="before whitening"
-             
-              />
+              <img src="/assets/images/before.png" alt="before whitening" />
               <AfterWrapper ref={afterRef}>
-               <div>
-               <img
-                  src="/assets/images/after.png"
-                  alt="after whitening"
-            
-                />
-               </div>
+                <div>
+                  <img src="/assets/images/after.png" alt="after whitening" />
+                </div>
               </AfterWrapper>
               <FlipIconWrapper ref={fliperRef}>
-          
-              <IconButton draggable={true}
-               ref={draggableIconRef} 
-              onTouchStart={animateFliper}
-              onTouchMove={animateFliper}
-              onTouchEnd={animateFliper}
-              >
+                <IconButton
+                  draggable={true}
+                  ref={draggableIconRef}
+                  onTouchMove={touchFliper}
+                  onDrag={dragFliper}
+                >
                   <FlipIcon />
                 </IconButton>
-
-               
               </FlipIconWrapper>
             </WhiteningFrame>
           </Grid>
