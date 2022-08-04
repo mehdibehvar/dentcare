@@ -46,7 +46,6 @@ const FlipIconWrapper=styled("span")(({theme})=>({
      "button":{
         cursor:"w-resize",
         backgroundColor:theme.palette.primary.main,
-  
         ":hover":{
             backgroundColor:"rgba(83, 189, 236, 0.6)"
         }
@@ -63,8 +62,10 @@ export default function WhiteningSection() {
     const afterRef=useRef();
     const frameRef=useRef();
     const animateFliper=(e)=>{
-        const movement=e.pageX-frameRef.current.offsetLeft;
-        const frameWidth=frameRef.current.clientWidth
+      const frameRefRect=frameRef.current.getBoundingClientRect();
+        const movement=e.pageX-frameRefRect.left;
+        const frameWidth=frameRefRect.width;
+        console.log(frameRefRect);
        const percent=100-(movement/frameWidth)*100;
        if(percent<=97 && percent>=2){
         fliperRef.current.style.right=`${percent}%`;
@@ -119,7 +120,12 @@ export default function WhiteningSection() {
               </AfterWrapper>
               <FlipIconWrapper ref={fliperRef}>
           
-              <IconButton draggable={true} ref={draggableIconRef}>
+              <IconButton draggable={true}
+               ref={draggableIconRef} 
+              onTouchStart={animateFliper}
+              onTouchMove={animateFliper}
+              onTouchEnd={animateFliper}
+              >
                   <FlipIcon />
                 </IconButton>
 
