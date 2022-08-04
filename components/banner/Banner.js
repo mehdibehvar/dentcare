@@ -10,16 +10,18 @@ export default function Banner() {
         overflow: "hidden",
         backgroundAttachment: "fixed",
         height: "86vh",
+        backgroundPosition: "62% 0%",
         [theme.breakpoints.up("md")]:{
-            height:"93vh"
+            height:"93vh",
+            backgroundPosition:"70% 0"
         },
         [theme.breakpoints.down("md")]:{
             height:"86vh",
-            backgroundPosition:""
+            backgroundPosition:"70% 0"
         },
         [theme.breakpoints.down('sm')]:{
             height:"80vh",
-            backgroundPosition:"70% 0;"
+            backgroundPosition:"70% 0"
         },
         [theme.breakpoints.down("xs")]:{
             height:"72vh",
