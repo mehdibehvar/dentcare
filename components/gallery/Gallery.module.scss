@@ -51,6 +51,7 @@
     position: relative;
     width: 100%;
     height: fit-content;
+    max-height: 400px;
     display: flex;
     justify-content: center;
     background-color: rgb(0, 0, 0);
@@ -58,6 +59,10 @@
     div{
         border-radius: 10px;
         overflow: hidden;
+        img{
+          max-width: 500px;
+          max-height: 400px;
+        }
         img:hover{
             transform: scale(1.4) rotate(5deg);
 
