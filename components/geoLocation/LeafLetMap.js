@@ -5,7 +5,8 @@ import useGeoLocation from 'utils/getLocation'
 import UserLocation from './userLocation';
 export default function LeafLetMap() {
   const {coordinates,loaded}=useGeoLocation();
-  const {lat,lng}=coordinates;
+
+  const {lat,lng}=loaded?coordinates:{};
   const matabLocation = [28.956999182352924,50.83648404560775];
   const polyline = [
     [28.956999182352924,50.83648404560775],

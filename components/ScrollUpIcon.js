@@ -23,7 +23,7 @@ export default function ScrollUpIcon() {
       return ()=> document.removeEventListener("scroll",handleShowScrollUpIcon)
     },[])
   return (
-    <Box sx={{position:"fixed",bottom:"0",visibility:showTooltip}}>
+    <Box sx={{position:"fixed",bottom:"0",visibility:showTooltip,margin:1}}>
     <Tooltip title="برو بالای صفحه">
        <IconButton onClick={handleScrollUp} color="secondary" sx={{backgroundColor:"primary.main"}}>
          <KeyboardArrowUpIcon />
