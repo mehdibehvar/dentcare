@@ -1,19 +1,40 @@
-
-import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
-
-export default function Location() {
+import { Container, Grid, Typography } from "@mui/material";
+import { LightSection } from "components/other/styledComponents";
+import TreatIcon from "components/other/TreatIcon";
+import dynamic from "next/dynamic";
+// Leaflet makes direct calls to the DOM when it is loaded,
+//  therefore React Leaflet is not compatible with server-side rendering.
+const MapWithNoSSR = dynamic(() => import("./LeafLetMap"), {
+  ssr: false
+});
+function Location() {
   return (
-    <MapContainer className='leaflet-container' center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
-    <TileLayer
-      attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-    />
-    <Marker position={[51.505, -0.09]}>
-      <Popup>
-        A pretty CSS3 popup. <br /> Easily customizable.
-      </Popup>
-    </Marker>
-  </MapContainer>
-  )
+    <>
+    <LightSection>
+    <Container>
+    <Grid>
+          <TreatIcon />
+          <Typography variant="h6" mb={1} component={"h6"}>
+             موقعیت فعلی ما:
+          </Typography>
+          <Typography
+            variant="caption"
+            mb={2}
+            component={"p"}
+            color={"text.disabled"}
+          >
+           برای رفتن به موقعیت خود بر روی نقشه کلیک کنید:
+          </Typography>
+        </Grid>
+    <div id="map" style={{height:300,width:"100%",marginBottom:50}}>
+     <MapWithNoSSR/>
+     </div>
+    </Container>
+    </LightSection>
+   
+    </>
+  );
 }
-
+export default Location;
+////React Leaflet does not replace Leaflet,
+/// it only provides bindings between React and Leaflet.

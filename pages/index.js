@@ -5,6 +5,7 @@ import AboutUs from 'components/aboutus/AboutUs';
 import OurServices from 'components/ourServices/OurServices';
 import Gallery from 'components/gallery/Gallery';
 import WhiteningSection from 'components/whitening/WhiteningSection';
+import Location from 'components/geoLocation/Location';
 export default function Home() {
   return (
    <>
@@ -15,7 +16,7 @@ export default function Home() {
       <OurServices/> 
       <Gallery/>
       <WhiteningSection/>
-
+     <Location/>
     </Layout>
    </>
   )
