@@ -3,7 +3,10 @@ import { Button, Grid, TextField } from "@mui/material";
 import { useFormik } from "formik";
 import * as yup from "yup";
 const CssTextField = styled(TextField)(({theme})=>({
-    marginBottom:2,
+    [theme.breakpoints.down("md")]:{
+        marginBottom:theme.spacing(1),
+    },
+ 
     // The <legend> tag defines a caption for the <fieldset> element.
     '& legend': {
       textAlign:"right",
@@ -58,7 +61,7 @@ const FormikForm = () => {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      console.log(JSON.stringify(values, null, 2));
+    //   console.log(JSON.stringify(values, null, 2));
     },
   });
 
@@ -72,7 +75,7 @@ const FormikForm = () => {
             id="firstname"
             name="firstname"
             label="نام"
-            value={formik.values.email}
+            value={formik.values.firstname}
             onChange={formik.handleChange}
             error={formik.touched.firstname && Boolean(formik.errors.firstname)}
             helperText={formik.touched.firstname && formik.errors.firstname}
@@ -131,7 +134,7 @@ const FormikForm = () => {
           />
         </Grid>
         </Grid>
-        <Button color="secondary" variant="contained" fullWidth type="submit">
+        <Button color="secondary" variant="contained" fullWidth type="submit" sx={{marginTop:"5px"}}>
           ارسال
         </Button>
       </form>
