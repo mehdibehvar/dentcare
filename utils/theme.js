@@ -10,6 +10,11 @@ import { createTheme } from "@mui/material";
             main:"#0FACEF",
             light:"#0facef",
         },
+        secondary:{
+            main:"#fab3e4",
+            light:"#e5fab3",
+            dark:"#e5fab3",   
+        },
         text:{
             primary:"#333333",
             secondary:"#666666",

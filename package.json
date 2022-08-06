@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.9.3",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.9.2",
+    "formik": "^2.2.9",
     "leaflet": "^1.8.0",
     "next": "12.2.3",
     "react": "18.2.0",
@@ -20,7 +21,8 @@
     "react-leaflet": "^4.0.1",
     "sass": "^1.54.0",
     "sharp": "^0.30.7",
-    "vazirmatn": "^33.0.3"
+    "vazirmatn": "^33.0.3",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "eslint": "8.20.0",

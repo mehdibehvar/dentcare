@@ -6,6 +6,7 @@ import OurServices from 'components/ourServices/OurServices';
 import Gallery from 'components/gallery/Gallery';
 import WhiteningSection from 'components/whitening/WhiteningSection';
 import Location from 'components/geoLocation/Location';
+import ContactUsSection from 'components/contactus/ContactUsSection';
 export default function Home() {
   return (
    <>
@@ -17,6 +18,7 @@ export default function Home() {
       <Gallery/>
       <WhiteningSection/>
      <Location/>
+     <ContactUsSection/>
     </Layout>
    </>
   )
