@@ -2,6 +2,7 @@ import styled from "@emotion/styled"
 import { Container, Typography } from "@mui/material"
 
 export default function Loading() {
+  
   const MapLoader=styled("div")(({theme})=>({
     backgroundColor:theme.palette.background.secondary,
     display:"flex",
