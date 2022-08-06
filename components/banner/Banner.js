@@ -8,7 +8,7 @@ export default function Banner() {
         position: "relative",
         backgroundSize: "cover",
         overflow: "hidden",
-        backgroundAttachment: "fixed",
+        backgroundAttachment: "inherit",
         height: "86vh",
         backgroundPosition: "62% 0%",
         [theme.breakpoints.up("md")]:{
@@ -25,7 +25,7 @@ export default function Banner() {
         },
         [theme.breakpoints.down("xs")]:{
             height:"72vh",
-            backgroundPosition:"40% 0"
+            backgroundPosition:"70% 0"
         }
     }))
   return (

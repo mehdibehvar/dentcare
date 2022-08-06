@@ -1,9 +1,10 @@
 import { Popup, Marker, useMapEvents } from "react-leaflet"
 import { useState } from 'react';
+
 function FlyToUserLocation() {
     const [position, setPosition] = useState(null)
     const map = useMapEvents({
-      click() {
+     click() {
         map.locate()
       },
       locationfound(e) {
