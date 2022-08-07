@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import VolunteerActivismIcon from "@mui/icons-material/VolunteerActivism";
 import SocialIcons from "components/other/SocialIcons";
@@ -6,6 +6,7 @@ import styled from "@emotion/styled";
 export default function Footer() {
   const FooterWrapper = styled("footer")(({ theme }) => ({
     backgroundColor:theme.palette.primary.light,
+    marginBottom:theme.spacing(2)
   }));
    const LeftBox=styled(Box)(({theme})=>({
     direction:"ltr",

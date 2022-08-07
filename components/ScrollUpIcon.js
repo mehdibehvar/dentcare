@@ -23,7 +23,7 @@ const ToolTipBox=styled(Box)(({theme})=>(props)=>({
  position:"fixed",
  bottom:"0",
  visibility:props.showTooltip,
- margin:theme.spacing(1),
+ margin:theme.spacing(2),
  button:{
   backgroundColor:theme.palette.primary.main,
   color:theme.palette.secondary.main,
@@ -47,7 +47,6 @@ export default function ScrollUpIcon() {
       });
     };
     const handleShowScrollUpIcon=()=>{
-      console.log("ssssssssssss");
       if(window.scrollY<=150){
         setShowTooltip("hidden");
       }else{

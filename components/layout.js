@@ -10,7 +10,7 @@ export default function Layout({ children }) {
       <Head>
         <title>BitaCare website</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
-        <meta name="mehdishop" content="best dentist in bushehr" />
+        <meta name="bitacare" content="بهترین دندانپزشک در بوشهر" />
       </Head>
       <TopBar />
       <Box sx={{ backgroundColor: "#FFFFF" }}>

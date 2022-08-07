@@ -53,11 +53,11 @@ const validationSchema = yup.object({
 const FormikForm = () => {
   const formik = useFormik({
     initialValues: {
-      email: "mehdi@gmail.com",
-      phone: "091700*****",
-      firstname: "نام",
-      lastname: "نام خانوادگی",
-      message: " سلام...",
+      email: "",
+      phone: "",
+      firstname: "",
+      lastname:'',
+      message: "",
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {

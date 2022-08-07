@@ -1,15 +1,13 @@
-import { AppBar,Box,Grid,Toolbar, Typography } from '@mui/material';
-import React from 'react'
-import styled from '@emotion/styled';
-import { orange, red } from '@mui/material/colors';
+import {Box,Grid, Typography } from '@mui/material';
 import topbarClasses from './TopBar.module.css'
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
+import { SocialIconsBox } from 'components/other/styledComponents';
 import EmailIcon from '@mui/icons-material/Email';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
-
+import theme from 'utils/theme';
 export default function TopBar() {
   return (
 <Box className={topbarClasses.topbar} >
@@ -21,12 +19,12 @@ export default function TopBar() {
         </ul>
     </Grid>
     <Grid item xs={12} sm={2} md={4}>
-        <Box color="primary.light" className={topbarClasses.topbarSocial}>
-            <EmailIcon sx={{fontSize:"20px",marginLeft:"5px"}}/>
-            <InstagramIcon sx={{fontSize:"20px",marginLeft:"5px"}}/>
-            <YouTubeIcon sx={{fontSize:"20px",marginLeft:"5px"}}/>
-            <TwitterIcon sx={{fontSize:"20px",marginLeft:"5px"}}/>
-        </Box>
+   <SocialIconsBox iconColor={theme.palette.primary.main}>
+   <EmailIcon />
+    <InstagramIcon  />
+    <YouTubeIcon  />
+    <TwitterIcon  />
+   </SocialIconsBox>
     </Grid>
 </Grid>
 </Box>

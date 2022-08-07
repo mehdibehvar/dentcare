@@ -7,9 +7,14 @@ import Gallery from 'components/gallery/Gallery';
 import WhiteningSection from 'components/whitening/WhiteningSection';
 import Location from 'components/geoLocation/Location';
 import ContactUsSection from 'components/contactus/ContactUsSection';
+import Head from 'next/head';
 export default function Home() {
   return (
    <>
+   <Head>
+   <title>BitaCare website</title>
+    <meta name="description" content=' بیتا بهوربهترین مطب دندانپزشکی در بوشهر'/>
+   </Head>
     <Layout>
       <Banner/> 
       <Navbar/> 
