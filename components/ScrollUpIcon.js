@@ -1,6 +1,42 @@
+import styled from "@emotion/styled";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import {  Box, IconButton, Tooltip } from "@mui/material";
+import {  Box, IconButton, Tooltip, tooltipClasses } from "@mui/material";
+
 import  { useEffect, useState } from "react";
+const LightTooltip = styled(({ className, ...props }) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]:{
+    backgroundColor: theme.palette.background.paper,
+    color: theme.palette.text.secondary,
+    boxShadow: theme.shadows[1],
+    fontSize: 11,
+    span:{
+      ":before":{
+        color: theme.palette.secondary.main
+       }
+    }
+   
+  },
+}));
+const ToolTipBox=styled(Box)(({theme})=>(props)=>({
+ position:"fixed",
+ bottom:"0",
+ visibility:props.showTooltip,
+ margin:theme.spacing(1),
+ button:{
+  backgroundColor:theme.palette.primary.main,
+  color:theme.palette.secondary.main,
+  padding:2,
+  svg:{
+    fontSize:30
+  },
+  ":hover":{
+    backgroundColor:theme.palette.secondary.light
+  }
+ }
+}))
+
 export default function ScrollUpIcon() {
     const [showTooltip,setShowTooltip]=useState("hidden");
     const handleScrollUp=()=>{
@@ -11,6 +47,7 @@ export default function ScrollUpIcon() {
       });
     };
     const handleShowScrollUpIcon=()=>{
+      console.log("ssssssssssss");
       if(window.scrollY<=150){
         setShowTooltip("hidden");
       }else{
@@ -23,12 +60,12 @@ export default function ScrollUpIcon() {
       return ()=> document.removeEventListener("scroll",handleShowScrollUpIcon)
     },[])
   return (
-    <Box sx={{position:"fixed",bottom:"0",visibility:showTooltip,margin:1}}>
-    <Tooltip title="برو بالای صفحه">
-       <IconButton onClick={handleScrollUp} color="secondary" sx={{backgroundColor:"primary.main"}}>
+    <ToolTipBox showTooltip={showTooltip} >
+    <LightTooltip title="برو بالای صفحه" arrow>
+       <IconButton onClick={handleScrollUp}>
          <KeyboardArrowUpIcon />
        </IconButton>
-     </Tooltip>
-</Box>
+     </LightTooltip>
+</ToolTipBox>
   )
 }
