@@ -24,6 +24,7 @@ const ToolTipBox=styled(Box)(({theme})=>(props)=>({
  bottom:"0",
  visibility:props.showTooltip,
  margin:theme.spacing(2),
+ zIndex:"999",
  button:{
   backgroundColor:theme.palette.primary.main,
   color:theme.palette.secondary.main,

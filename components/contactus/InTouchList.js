@@ -11,8 +11,8 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 export default function InTouchList() {
   const ListWrapper=styled("div")({
     li:{
-      textAlign:"right"
-    }
+      textAlign:"right",
+    },
   })
   return (
     <ListWrapper>

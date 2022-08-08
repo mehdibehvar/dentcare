@@ -8,23 +8,33 @@ import WhiteningSection from 'components/whitening/WhiteningSection';
 import Location from 'components/geoLocation/Location';
 import ContactUsSection from 'components/contactus/ContactUsSection';
 import Head from 'next/head';
-export default function Home() {
+import data from 'utils/data';
+export default function Home({dataObject}) {
+  const {aboutusTabInfo,gallery,servicesInfo}=dataObject;
   return (
    <>
    <Head>
    <title>BitaCare website</title>
-    <meta name="description" content=' بیتا بهوربهترین مطب دندانپزشکی در بوشهر'/>
+    <meta name="description" content="بهترین مطب دندانپزشکی در بوشهر"/>
    </Head>
     <Layout>
       <Banner/> 
       <Navbar/> 
-      <AboutUs/>
-      <OurServices/> 
-      <Gallery/>
+      <AboutUs aboutusTabInfo={aboutusTabInfo}/>
+      <OurServices servicesInfo={servicesInfo}/> 
+      <Gallery gallery={ gallery }/>
       <WhiteningSection/>
      <Location/>
      <ContactUsSection/>
     </Layout>
    </>
   )
+}
+export async function getStaticProps() {
+  const dataObject=data;
+  return {
+    props:{
+      dataObject:dataObject
+    }
+  }
 }

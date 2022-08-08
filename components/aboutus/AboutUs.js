@@ -2,12 +2,10 @@ import { Container, Grid, Typography } from "@mui/material";
 import { GraySection } from "components/other/styledComponents";
 import TreatIcon from "components/other/TreatIcon";
 import { useState } from "react";
-import data from "utils/data";
 import {  Tab, TabList } from "./aboutusStyledComponents";
 import TabContent from "./TabContent";
 
-export default function AboutUs() {
-  const {aboutusTabInfo}=data;
+export default function AboutUs({aboutusTabInfo}) {
   const [tabDisplay,setTabDisplay]=useState("هدف ما")
    function handleChangeTab(tabName) {
        setTabDisplay(tabName)

@@ -2,7 +2,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Container, Grid, IconButton, Typography } from "@mui/material";
 import TreatIcon from "components/other/TreatIcon";
-import data from "utils/data";
 import galleryClasses from "./Gallery.module.scss";
 import {  useState } from "react";
 import ImageList from "@mui/material/ImageList";
@@ -19,9 +18,8 @@ function srcset(image, size, rows = 1, cols = 1) {
   };
 }
 
-export default function Gallery() {
+export default function Gallery({ gallery }) {
   const [fullScreen, setFullscreen] = useState(false);
-  const { gallery } = data;
   const handleFullScreen = (e, image) => {
     setFullscreen(image);
   };

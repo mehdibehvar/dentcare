@@ -1,11 +1,9 @@
 import { Container, Grid, Typography } from "@mui/material";
 import { LightSection } from "components/other/styledComponents";
 import TreatIcon from "components/other/TreatIcon";
-import data from "utils/data";
 import ServiceBox from "./ServiceBox";
 
-export default function OurServices() {
-    const {servicesInfo}=data;
+export default function OurServices({servicesInfo}) {
     const servicesBoxList=servicesInfo.map(service=> <Grid key={service.title} item xs={12} sm={6} md={6} lg={4}>
     <ServiceBox boxInfo={service}/>
       </Grid>)
