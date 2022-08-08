@@ -24,17 +24,17 @@ export default function Home({dataObject}) {
       <OurServices servicesInfo={servicesInfo}/> 
       <Gallery gallery={ gallery }/>
       <WhiteningSection/>
-     <Location/>
+         <Location/>
      <ContactUsSection/>
     </Layout>
    </>
   )
 }
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const dataObject=data;
   return {
     props:{
-      dataObject:dataObject
+      dataObject
     }
   }
 }

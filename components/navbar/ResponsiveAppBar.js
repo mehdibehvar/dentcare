@@ -8,30 +8,56 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import LogoWrapper from "./LogoWrapper";
-import { red } from "@mui/material/colors";
 import Link from "next/link";
+import styled from "@emotion/styled";
+import HomeIcon from '@mui/icons-material/Home';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import ContactPageIcon from '@mui/icons-material/ContactPage';
+import CollectionsIcon from '@mui/icons-material/Collections';
+import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
+import { SocialIconsBox } from "components/other/styledComponents";
+import { useRouter } from "next/router";
+const MenuBox=styled(Menu)(({theme})=>(props)=>({
+  marginTop:45,
+  transform:props.transy
+ }))
+const MenuItemBox=styled(MenuItem)(({theme})=>(props)=>({
+  width:"200px",
+  marginBottom:theme.spacing(2),
+  backgroundColor:props.currentpage,
+  
+}));
 
-const pages = [["خانه","/"],
-["درباره ما","aboutus"], ["خدمات","services"],
- ["گالری","gallery"], ["تماس با ما","contactus"]];
+const pages = [["خانه","/",<HomeIcon key="0"/>],
+["درباره ما","/aboutus",<AccountCircleIcon key="1"/>], ["خدمات","/services",<MedicalServicesIcon key="2"/>],
+ ["گالری","/gallery",<CollectionsIcon key="3"/>], ["تماس با ما","/contactus",<ContactPageIcon key="4"/>]];
 ///////////--///////////////////////////
 const ResponsiveAppBar = () => {
+  const [rectop,setRectop]=useState(0);
+  const navRef=useRef();
+  const transy=rectop>440?"translateY(-54px)":"translateY(20px)";
   const [anchorElNav, setAnchorElNav] = useState(null);
+  const {route}=useRouter();
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+  useEffect(()=>{ 
+    const elem=navRef.current;
+    const rec=elem.getBoundingClientRect();
+    setRectop(rec.top)
+  },[])
   return (
     <>
-      <AppBar
+      <AppBar 
         position="static"
-        sx={{ backgroundColor: "rgba(83, 189, 236, 0.8)" }}
+        sx={{ backgroundColor: "rgba(83, 189, 236, 0.8)"}}
       >
-        <Container maxWidth="xl">
+        <Container maxWidth="xl"  ref={navRef}>
           <Toolbar disableGutters>
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
@@ -44,7 +70,8 @@ const ResponsiveAppBar = () => {
               >
                 <MenuIcon />
               </IconButton>
-              <Menu
+              <MenuBox
+                transy={transy}
                 id="menu-appbar"
                 anchorEl={anchorElNav}
                 anchorOrigin={{
@@ -53,24 +80,28 @@ const ResponsiveAppBar = () => {
                 }}
                 keepMounted
                 transformOrigin={{
-                  vertical: "top",
+                  vertical: "bottom",
                   horizontal: "left",
                 }}
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
                 sx={{
                   display: { xs: "block", md: "none" },
-                  marginTop:"50px"
                 }}
               >
                 {pages.map((page) => (
                     <Link href={`${page[1]}`} key={page[0]}>
-                  <MenuItem sx={{  backgroundColor:"secondary.main"}}  onClick={handleCloseNavMenu}>
+
+                <MenuItemBox currentpage={`${route===page[1]?"#FFFFFF":"#fab3e4"}`} onClick={handleCloseNavMenu}>
+                    <SocialIconsBox>
+                        {page[2]}
+                    </SocialIconsBox>
                     <Typography textAlign="center" color={"primary.main"} component={"a"}>{page[0]}</Typography>
-                  </MenuItem>
+                  </MenuItemBox>
+
                     </Link>
                 ))}
-              </Menu>
+              </MenuBox>
             </Box>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (

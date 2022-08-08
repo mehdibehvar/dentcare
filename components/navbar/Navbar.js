@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import ResponsiveAppBar from './Appbar'
+import ResponsiveAppBar from './ResponsiveAppBar'
 
 export default function Navbar() {
 

@@ -4,6 +4,7 @@ import TreatIcon from "components/other/TreatIcon";
 import dynamic from "next/dynamic";
 // Leaflet makes direct calls to the DOM when it is loaded,
 //  therefore React Leaflet is not compatible with server-side rendering.
+//set .leaflet-container css style in global style {width:100%,height:300px}
 const MapWithNoSSR = dynamic(() => import("./LeafLetMap"), {
   ssr: false
 });
@@ -26,15 +27,14 @@ function Location() {
            برای رفتن به موقعیت خود بر روی نقشه کلیک کنید:
           </Typography>
         </Grid>
-    <div id="map" style={{height:300,width:"100%",marginBottom:50}}>
-     <MapWithNoSSR/>
-     </div>
+          <div>
+         <MapWithNoSSR/>
+          </div>
     </Container>
     </LightSection>
-   
     </>
   );
 }
 export default Location;
 ////React Leaflet does not replace Leaflet,
-/// it only provides bindings between React and Leaflet.
+/// it only provides bindings between React and Leaflet.  <Loader sizeNumber={"100"}/>

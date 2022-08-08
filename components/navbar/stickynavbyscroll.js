@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import React, { useEffect, useState } from 'react'
-import ResponsiveAppBar from './Appbar'
+import ResponsiveAppBar from './ResponsiveAppBar'
 
 export default function Navbar() {
   const[position,setPosition]=useState("relative");

@@ -24,3 +24,4 @@ export default function LeafLetMap() {
   </>
   )
 }
+//set .leaflet-container css style in global style {width:100%,height:300px}
