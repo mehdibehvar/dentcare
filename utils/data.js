@@ -63,7 +63,7 @@ gallery:[
     title: 'bitacare',
   },
   {
-    img: 'assets/images/gallery6.png',
+    img: 'assets/images/gallery6.jpg',
     title: 'bitacare',
   },
   {

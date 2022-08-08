@@ -3,6 +3,7 @@ import { Box } from "@mui/system";
 import TopBar from "./topbar/TopBar";
 import ScrollUpIcon from "./ScrollUpIcon";
 import Footer from "./footer/Footer";
+import Navbar from "./navbar/Navbar";
 
 export default function Layout({ children }) {
   return (
@@ -12,11 +13,11 @@ export default function Layout({ children }) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         <meta name="bitacare" content="بهترین دندانپزشک در بوشهر" />
       </Head>
-      <TopBar />
-      <Box sx={{ backgroundColor: "#FFFFF" }}>
+      <TopBar />   
+        <Box sx={{ backgroundColor: "#FFFFF" }}>
         {children}
- <ScrollUpIcon/>
- <Footer/>
+        <ScrollUpIcon/>
+         <Footer/>
       </Box>
     </>
   );

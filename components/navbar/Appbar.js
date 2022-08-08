@@ -11,17 +11,20 @@ import MenuItem from "@mui/material/MenuItem";
 import { useEffect, useState } from "react";
 import LogoWrapper from "./LogoWrapper";
 import { red } from "@mui/material/colors";
+import Link from "next/link";
 
-const pages = ["خانه", "درباره ما", "خدمات", "دکتر", "گالری", "تماس با ما"];
+const pages = [["خانه","/"],
+["درباره ما","aboutus"], ["خدمات","services"],
+ ["گالری","gallery"], ["تماس با ما","contactus"]];
+///////////--///////////////////////////
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const handleOpenNavMenu = () => {
+  const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-  
   return (
     <>
       <AppBar
@@ -61,21 +64,25 @@ const ResponsiveAppBar = () => {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem sx={{  backgroundColor:"primary.main"}} key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center" color={red[500]}>{page}</Typography>
+                    <Link href={`${page[1]}`} key={page[0]}>
+                  <MenuItem sx={{  backgroundColor:"secondary.main"}}  onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center" color={"primary.main"} component={"a"}>{page[0]}</Typography>
                   </MenuItem>
+                    </Link>
                 ))}
               </Menu>
             </Box>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
+               <Link  key={page[0]} href={`${page[1]}`}>
                 <Button
-                  key={page}
+                 
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
-                  {page}
+                  {page[0]}
                 </Button>
+               </Link>
               ))}
             </Box>
             <LogoWrapper />
