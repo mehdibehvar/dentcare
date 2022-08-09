@@ -14,7 +14,7 @@ export default function Home({dataObject}) {
   return (
    <>
    <Head>
-   <title>BitaCare website</title>
+   <title>DentCare website</title>
     <meta name="description" content="بهترین مطب دندانپزشکی در بوشهر"/>
    </Head>
     <Layout>
