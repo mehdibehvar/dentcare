@@ -19,7 +19,7 @@ export default function BannerDetails() {
   <DetailsWrapper>
     <Grid >
       <Typography variant="h4" component={"h3"} pr={"20px"} className={bannerStyles.banner_title}>بهترین تجربه درمان  <Typography variant="h4" component={"span"} color="primary.main">زندگی</Typography> را با ما داشته باشید.</Typography>
-    <Typography variant="body1" component="p" mb={"20px"} pr={"20px"} className={bannerStyles.banner_desc}>.کلنیک دندانپزشکی دکتر بیتا بهور ارایه دهنده بهترین و با کیفیت ترین خدمات دندانپزشکی به شما دوست عزیز میباشدجهت رزرو  نوبت بر روی ایکن بالا کلیک کنید.</Typography>
+    <Typography variant="body1" component="p" mb={"20px"} pr={"20px"} className={bannerStyles.banner_desc}>.کلنیک دندانپزشکی دکتر .... ارایه دهنده بهترین و با کیفیت ترین خدمات دندانپزشکی به شما دوست عزیز میباشدجهت رزرو  نوبت بر روی ایکن بالا کلیک کنید.</Typography>
     </Grid>
   </DetailsWrapper>
 
