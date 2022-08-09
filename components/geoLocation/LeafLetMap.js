@@ -4,7 +4,7 @@ import FlyToUserLocation from './flytouserLocation';
 import UserLocation from './userLocation';
 
 export default function LeafLetMap() {
-  const matabLocation = [28.956999182352924,50.83648404560775];
+  const matabLocation = [30.958545596786156, 51.25635877846443];
 
   return (
   <>
