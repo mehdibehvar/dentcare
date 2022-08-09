@@ -13,6 +13,11 @@ export default function GalleryPage({dataObject}) {
 }
 export async function getStaticProps() {
   const dataObject=data.gallery;
+  if(!dataObject){
+    return{
+      notFound:true
+    }
+  }
   return{
     props:{
       dataObject

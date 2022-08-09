@@ -15,6 +15,11 @@ export default function Aboutus({dataObject}) {
 }
 export async function getStaticProps() {
   const dataObject=data.aboutusTabInfo;
+  if(!dataObject){
+    return{
+      notFound:true
+    }
+  }
   return{
     props:{
       dataObject

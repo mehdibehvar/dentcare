@@ -30,11 +30,17 @@ export default function Home({dataObject}) {
    </>
   )
 }
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const dataObject=data;
+  if(!dataObject){
+    return{
+      notFound:true
+    }
+  }
   return {
     props:{
       dataObject
-    }
+    },
+    revalidate:5
   }
 }

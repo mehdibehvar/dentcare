@@ -13,6 +13,11 @@ export default function ServicesPage({dataObject}) {
 }
 export async function getStaticProps() {
   const dataObject=data.servicesInfo;
+  if(!dataObject){
+    return{
+      notFound:true
+    }
+  }
   return{
     props:{
       dataObject

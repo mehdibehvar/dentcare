@@ -24,7 +24,7 @@ export default function InTouchList() {
         </Avatar>
       </ListItemAvatar>
 
-<ListItemText primary="آدرس" secondary="بوشهر-میدان امام خمینی-کوچه لاله-جنب فست فود پت و مت"/>
+<ListItemText primary="آدرس" secondary="-میدان امام خمینی-کوچه لاله-جنب فست فود پت و مت"/>
   
 
     </ListItem>
@@ -43,7 +43,7 @@ export default function InTouchList() {
           <MailIcon />
         </Avatar>
       </ListItemAvatar>
-      <ListItemText primary="ایمیل" secondary="Drbitabehvar@gmail.com" />
+      <ListItemText primary="ایمیل" secondary="Drexample@gmail.com" />
     </ListItem>
     <ListItem>
       <ListItemAvatar>

@@ -29,7 +29,13 @@ const MenuItemBox=styled(MenuItem)(({theme})=>(props)=>({
   backgroundColor:props.currentpage,
   
 }));
-
+const NavLinkTypo=styled(Typography)(({theme})=>({
+  transition:"all 1s ease",
+  ":hover":{
+    color:theme.palette.secondary.main,
+    transform:"scale(1.1)"
+  }
+}))
 const pages = [["خانه","/",<HomeIcon key="0"/>],
 ["درباره ما","/aboutus",<AccountCircleIcon key="1"/>], ["خدمات","/services",<MedicalServicesIcon key="2"/>],
  ["گالری","/gallery",<CollectionsIcon key="3"/>], ["تماس با ما","/contactus",<ContactPageIcon key="4"/>]];
@@ -107,11 +113,10 @@ const ResponsiveAppBar = () => {
               {pages.map((page) => (
                <Link  key={page[0]} href={`${page[1]}`}>
                 <Button
-                 
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
-                  {page[0]}
+                  <NavLinkTypo>{page[0]}</NavLinkTypo>
                 </Button>
                </Link>
               ))}
