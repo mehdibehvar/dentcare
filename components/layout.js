@@ -9,7 +9,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Head>
-        <title>BitaCare website</title>
+        <title>DentCare website</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         <meta name="bitacare" content="بهترین دندانپزشک در بوشهر" />
       </Head>
