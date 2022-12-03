@@ -61,7 +61,7 @@ const ResponsiveAppBar = () => {
     <>
       <AppBar 
         position="static"
-        sx={{ backgroundColor: "rgba(83, 189, 236, 0.8)"}}
+        sx={{ backgroundColor:"palette.primary.main"}}
       >
         <Container maxWidth="xl"  ref={navRef}>
           <Toolbar disableGutters>

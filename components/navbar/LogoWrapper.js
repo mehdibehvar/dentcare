@@ -42,7 +42,7 @@ const LogoBox=styled(Box)(({theme})=>({
 }))
 export default function LogoWrapper() {
   return (
-    <LogoBox color="primary.light">
+    <LogoBox color="primary.main">
         <span>
           DentCare</span><i  className={`fa fa-tooth`}></i>
     </LogoBox>

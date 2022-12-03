@@ -13,7 +13,7 @@ function Location() {
     <>
     <LightSection>
     <Container>
-    <Grid>
+        <Grid>
           <TreatIcon />
           <Typography variant="h6" mb={1} component={"h6"}>
              موقعیت فعلی ما:

@@ -12,7 +12,7 @@ export default function LeafLetMap() {
     <TileLayer
       attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-    />
+     />
   <Marker position={matabLocation}>
       <Popup>
        مطب دکتر بیتا بهور<br />

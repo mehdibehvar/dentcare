@@ -1,13 +1,11 @@
 import { createTheme } from "@mui/material";
-
-
  const theme=createTheme({
     typography:{
         fontFamily:"Vazirmatn-RD"
     },
     palette:{
         primary:{
-            main:"#0FACEF",
+            main:"#FF059B",/////#72C7ED////FF059B///#0FACEF
             light:"#0facef",
         },
         secondary:{
