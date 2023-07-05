@@ -40,6 +40,28 @@ export default function Banner() {
   const handleOpensys = () => {
     window.open("http://www.google.com", "_system");
   };
+useEffect(() => {
+    var standalone = window.navigator.standalone,
+    userAgent = window.navigator.userAgent.toLowerCase(),
+    safari = /safari/.test(userAgent),
+    ios = /iphone|ipod|ipad/.test(userAgent);
+  
+  if (ios) {
+    if (!standalone && safari) {
+      console.log("// Safari");
+    } else if (!standalone && !safari) {
+  console.log('// iOS webview');
+    };
+  } else {
+    if (userAgent.includes('wv')) {
+console.log('      // Android webview');
+    } else {
+ console.log('     // Chrome');
+    }
+  };
+
+}, [])
+
   return (
     <BannerSection>
       <Box>
