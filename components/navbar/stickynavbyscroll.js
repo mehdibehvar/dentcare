@@ -15,7 +15,6 @@ export default function Navbar() {
         bottom: "8px",
     }));
     const changePosition=()=>{
-      console.log(window.scrollY);
       if(window.scrollY>=450){
         setPosition("fixed")
        }

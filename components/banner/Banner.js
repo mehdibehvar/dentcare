@@ -40,6 +40,7 @@ export default function Banner() {
   return (
    <BannerSection>
    <Box>
+   <a href="http://www.google.com" target="_system">Open in Browser</a>
     <MyLogo>
         <ReactSvgLogo/>
     </MyLogo>
