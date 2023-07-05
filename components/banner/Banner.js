@@ -40,7 +40,7 @@ export default function Banner() {
   return (
    <BannerSection>
    <Box>
-   <a href="http://www.google.com" target="_system">Open in Browser</a>
+   <a href="https://master.tube/apply/#apply-forms" target="_system">Open in Browser</a>
     <MyLogo>
         <ReactSvgLogo/>
     </MyLogo>
