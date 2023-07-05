@@ -4,6 +4,7 @@ import Navbar from "components/navbar/Navbar";
 import BannerDetails from "./BannerDetails";
 import ReactSvgLogo from "./ReactLogo";
 export default function Banner() {
+    const [webview, setWebview] = useState(false)
   const BannerSection = styled("section")(({ theme }) => ({
     backgroundImage: "url(./assets/images/bann.jpg)",
     position: "relative",
@@ -54,9 +55,10 @@ useEffect(() => {
     };
   } else {
     if (userAgent.includes('wv')) {
-console.log('      // Android webview');
+        setWebview(true)
+alert('      // Android webview');
     } else {
- console.log('     // Chrome');
+ alert('     // Chrome');
     }
   };
 
@@ -69,6 +71,9 @@ console.log('      // Android webview');
           {" "}
           درخواست نقد کردن درآمد کانال
         </a>
+        <div>
+            {webview?<h2>go to chrome </h2>:<h2>chrome</h2>}
+        </div>
         <Button onClick={handleOpensys}>go bro</Button>
         <MyLogo>
           <ReactSvgLogo />
