@@ -3,6 +3,7 @@ import { Box, Button } from "@mui/material";
 import Navbar from "components/navbar/Navbar";
 import BannerDetails from "./BannerDetails";
 import ReactSvgLogo from "./ReactLogo";
+import { useEffect, useState } from "react";
 export default function Banner() {
     const [webview, setWebview] = useState(false)
   const BannerSection = styled("section")(({ theme }) => ({
