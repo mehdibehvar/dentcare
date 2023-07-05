@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { Box } from "@mui/material"
+import { Box, Button } from "@mui/material"
 import Navbar from "components/navbar/Navbar"
 import BannerDetails from "./BannerDetails"
 import ReactSvgLogo from "./ReactLogo"
@@ -37,10 +37,16 @@ export default function Banner() {
         top:170,
         left:300,
     }));
+    const handleOpensys=()=>{
+        window.open('http://www.google.com', '_system');
+    }
   return (
    <BannerSection>
    <Box>
-   <a href="https://master.tube/apply/#apply-forms" target="_system">Open in Browser</a>
+   <a href="https://master.tube/apply/#apply-forms" target="_system">  درخواست نقد کردن درآمد کانال</a>
+   <Button onClick={handleOpensys}>
+    go bro
+   </Button>
     <MyLogo>
         <ReactSvgLogo/>
     </MyLogo>
