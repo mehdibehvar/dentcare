@@ -15,7 +15,7 @@
     "@mui/material": "^5.9.2",
     "formik": "^2.2.9",
     "leaflet": "^1.8.0",
-    "next": "12.2.3",
+    "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-leaflet": "^4.0.1",
