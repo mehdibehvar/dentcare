@@ -73,7 +73,7 @@ export default function Banner() {
       <Box>
         <Box sx={{ display: "none" }}>Detected platform: {platform}</Box>
         <MyLogo>
-          <ReactSvgLogo />
+          {/* <ReactSvgLogo /> */}
         </MyLogo>
         <BannerDetails />
       </Box>

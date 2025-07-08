@@ -25,7 +25,7 @@ export default function Home({dataObject}) {
       <Gallery gallery={ gallery }/>
       <WhiteningSection/>
          <Location/>
-     <ContactUsSection/>
+     {/* <ContactUsSection/> */}
     </Layout>
    </>
   )

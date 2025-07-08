@@ -1,27 +1,29 @@
 import { createTheme } from "@mui/material";
- const theme=createTheme({
-    typography:{
-        fontFamily:"Vazirmatn-RD"
+const theme = createTheme({
+  typography: {
+    fontFamily: "Vazirmatn-RD",
+  },
+  palette: {
+    primary: {
+      main: "#FF2DD1",
+      light: "#FF7EE4",
+      dark: "#C4009C",
     },
-    palette:{
-        primary:{
-            main:"#FF059B",/////#72C7ED////FF059B///#0FACEF
-            light:"#0facef",
-        },
-        secondary:{
-            main:"#fab3e4",
-            light:"#e5fab3",
-            dark:"#e5fab3",   
-        },
-        text:{
-            primary:"#333333",
-            secondary:"#666666",
-            disabled:"#999999"
-        },
-        background:{
-            paper:"#FFFFFF",
-            default:"#FAFAFA",
-        }
-    }
-})
+    secondary: {
+      main: "#63C8FF",
+      light: "#A1DEFF",
+      dark: "#2196DB",
+    },
+
+    text: {
+      primary: "#333333",
+      secondary: "#666666",
+      disabled: "#999999",
+    },
+    background: {
+      paper: "#FAFAFA",
+      default: "#FAFAFA",
+    },
+  },
+});
 export default theme;

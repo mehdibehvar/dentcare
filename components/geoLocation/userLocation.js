@@ -21,7 +21,7 @@ import { Marker, Popup, useMapEvents, Polyline } from "react-leaflet";
          <Marker position={position}>
           <Popup>موقعیت فعلی شما</Popup>
         </Marker>
-     <Polyline pathOptions={limeOptions} positions={polyline} />
+     {/* <Polyline pathOptions={limeOptions} positions={polyline} /> */}
       </>
      
       )

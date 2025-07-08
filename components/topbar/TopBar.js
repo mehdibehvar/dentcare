@@ -1,15 +1,11 @@
-import {Box,Grid, Typography } from '@mui/material';
-import topbarClasses from './TopBar.module.css'
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
-import { SocialIconsBox } from 'components/other/styledComponents';
-import EmailIcon from '@mui/icons-material/Email';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import theme from 'utils/theme';
+import { Box, Grid, Typography } from "@mui/material"; 
+import topbarClasses from "./TopBar.module.css";
+import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
+import theme from "utils/theme";
 import { useEffect, useState } from "react";
 import styled from "@emotion/styled";
+import SocialIcons from "components/other/SocialIcons";
+
 const ScrollBarTrack = styled(Box)(({ theme }) => ({
   width: "100%",
   height: 8,
@@ -17,32 +13,61 @@ const ScrollBarTrack = styled(Box)(({ theme }) => ({
   position: "sticky",
   top: 0,
   overflow: "hidden",
-  zIndex:1000
+  zIndex: 1000,
 }));
+
 const ScrollBar = styled(Box)(({ theme, scrollBarWidth }) => ({
   backgroundColor: theme.palette.primary.main,
   height: 8,
   width: `${scrollBarWidth}%`,
- 
 }));
-const  getDocHeight  =  ()  =>  {
+
+const getDocHeight = () => {
   return Math.max(
-    document.body.scrollHeight,  document.documentElement.scrollHeight,
-    document.body.offsetHeight,  document.documentElement.offsetHeight,
-    document.body.clientHeight,  document.documentElement.clientHeight
+    document.body.scrollHeight,
+    document.documentElement.scrollHeight,
+    document.body.offsetHeight,
+    document.documentElement.offsetHeight,
+    document.body.clientHeight,
+    document.documentElement.clientHeight
   );
-}
+};
+
+// Ring animation
+const RingAnimation = styled(PhoneInTalkIcon)(({ theme }) => ({
+  fontSize: "16px",
+  marginLeft: "2px",
+  animation: "ring 3s infinite", // Ring animation every 3 seconds
+  '@keyframes ring': {
+    '0%': {
+      transform: 'scale(1)',
+      boxShadow: '0 0 5px 2px rgba(99, 200, 255,0.5)', // start with a soft glow
+    },
+    '50%': {
+      transform: 'scale(1.2)', // slightly increase the size
+      boxShadow: '0 0 15px 5px rgba(99, 200, 255,1)', // increase glow effect
+    },
+    '100%': {
+      transform: 'scale(1)', // return to original size
+      boxShadow: '0 0 5px 2px rgba(99, 200, 255,0.5)', // return to soft glow
+    }
+  }
+}));
+
 export default function TopBar() {
   const [scroller, setScroller] = useState(0);
 
   const handleScroll = (e) => {
-    const  scrollTop  =  window.pageYOffset;
-    const  winHeight  =  window.innerHeight;
-    const docHeight=getDocHeight();
-    const  totalDocScrollLength  =  docHeight  -  winHeight;
-    const percentOfScroll = Math.floor(((scrollTop) / totalDocScrollLength ) *  100);
+    const scrollTop = window.pageYOffset;
+    const winHeight = window.innerHeight;
+    const docHeight = getDocHeight();
+    const totalDocScrollLength = docHeight - winHeight;
+    const percentOfScroll = Math.floor(
+      (scrollTop / totalDocScrollLength) * 100
+    );
     setScroller(percentOfScroll);
   };
+
   useEffect(() => {
     document.addEventListener("scroll", handleScroll);
 
@@ -50,29 +75,44 @@ export default function TopBar() {
       document.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
-<>
-<ScrollBarTrack>
-    <ScrollBar scrollBarWidth={scroller} />
-  </ScrollBarTrack>
-<Box className={topbarClasses.topbar} >
-<Grid container>
-    <Grid item xs={12} sm={10} md={8} color="primary.main">
-        <ul className={topbarClasses.topbarList}>
-            <li><PhoneInTalkIcon sx={{fontSize:"16px",marginLeft:"2px"}}/><Typography variant='overline' component={"span"} color="primary.main">تلفن تماس : 09909459497</Typography></li>
-            <li><AccessTimeIcon sx={{fontSize:"16px",marginLeft:"2px"}}/><Typography variant='overline' component={"span"} color="primary.main"> ساعات کاری:شنبه تا پنجشنبه از ساعت 8:00 الی 9:00</Typography></li>
-        </ul>
-    </Grid>
-    <Grid item xs={12} sm={2} md={4}>
-   <SocialIconsBox iconColor={theme.palette.primary.main}>
-   <EmailIcon />
-    <InstagramIcon  />
-    <YouTubeIcon  />
-    <TwitterIcon  />
-   </SocialIconsBox>
-    </Grid>
-</Grid>
-</Box>
-</>
-  )
+    <>
+      <ScrollBarTrack>
+        <ScrollBar scrollBarWidth={scroller} />
+      </ScrollBarTrack>
+      <Box className={topbarClasses.topbar}>
+        <Grid container>
+          <Grid item xs={6} sm={6} color="primary.main">
+            <ul className={topbarClasses.topbarList}>
+              <li>
+                <a
+                  href="tel:09054851056"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    textDecoration: "none",
+                    color: "inherit",
+                  }}
+                >
+                  <RingAnimation />
+                  <Typography
+                    variant="overline"
+                    component="span"
+                    color="primary.main"
+                  >
+                    تلفن تماس : 09054851056
+                  </Typography>
+                </a>
+              </li>
+              {/* <li><AccessTimeIcon sx={{fontSize:"16px",marginLeft:"2px"}}/><Typography variant='overline' component={"span"} color="primary.main"> ساعات کاری:شنبه تا پنجشنبه از ساعت 8:00 الی 9:00</Typography></li> */}
+            </ul>
+          </Grid>
+          <Grid item xs={6} sm={6}>
+            <SocialIcons iconColor={theme.palette.primary.main} />
+          </Grid>
+        </Grid>
+      </Box>
+    </>
+  );
 }
