@@ -14,8 +14,8 @@ export default function Home({dataObject}) {
   return (
    <>
    <Head>
-   <title>DentCare website</title>
-    <meta name="description" content="بهترین مطب دندانپزشکی در بوشهر"/>
+   <title>  دندان پزشک بوشهر</title>
+    <meta name="description" content="بهترین مطب دندان پزشکی در بوشهر"/>
    </Head>
     <Layout>
       <Banner/> 
@@ -25,7 +25,6 @@ export default function Home({dataObject}) {
       <Gallery gallery={ gallery }/>
       <WhiteningSection/>
          <Location/>
-     {/* <ContactUsSection/> */}
     </Layout>
    </>
   )
