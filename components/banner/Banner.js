@@ -1,11 +1,9 @@
 import styled from "@emotion/styled";
-import { Box, Button } from "@mui/material";
-import Navbar from "components/navbar/Navbar";
+import { Box } from "@mui/material";
 import BannerDetails from "./BannerDetails";
 import ReactSvgLogo from "./ReactLogo";
 import { useEffect, useState } from "react";
 export default function Banner() {
-    const [webview, setWebview] = useState(false)
   const BannerSection = styled("section")(({ theme }) => ({
     backgroundImage: "url(./assets/images/bann.jpg)",
     position: "relative",
@@ -39,43 +37,41 @@ export default function Banner() {
     top: 170,
     left: 300,
   }));
-  const handleOpensys = () => {
-    window.open("http://www.google.com", "_system");
-  };
-useEffect(() => {
+  const [platform, setPlatform] = useState("");
+  useEffect(() => {
     var standalone = window.navigator.standalone,
-    userAgent = window.navigator.userAgent.toLowerCase(),
-    safari = /safari/.test(userAgent),
-    ios = /iphone|ipod|ipad/.test(userAgent);
-  
-  if (ios) {
-    if (!standalone && safari) {
-      console.log("// Safari");
-    } else if (!standalone && !safari) {
-  console.log('// iOS webview');
-    };
-  } else {
-    if (userAgent.includes('wv')) {
-        setWebview(true)
-alert('      // Android webview');
-    } else {
- alert('     // Chrome');
-    }
-  };
+      userAgent = window.navigator.userAgent.toLowerCase(),
+      safari = /safari/.test(userAgent),
+      ios = /iphone|ipod|ipad/.test(userAgent);
 
-}, [])
+    console.log("standalone:", standalone);
+    console.log("userAgent:", userAgent);
+    console.log("safari:", safari);
+    console.log("ios:", ios);
+
+    if (ios) {
+      if (!standalone && safari) {
+        console.log("// Safari");
+        setPlatform("Safari on iOS");
+      } else if (!standalone && !safari) {
+        console.log("// iOS webview");
+        setPlatform("iOS Webview");
+      }
+    } else {
+      if (userAgent.includes("wv")) {
+        console.log("      // Android webview");
+        setPlatform("Android Webview");
+      } else {
+        console.log("     // Chrome");
+        setPlatform("Chrome or Other");
+      }
+    }
+  }, []);
 
   return (
     <BannerSection>
       <Box>
-        <a href="https://master.tube/apply/#apply-forms" target="_blank" rel="noreferrer">
-          {" "}
-          درخواست نقد کردن درآمد کانال
-        </a>
-        <div>
-            {webview?<h2>go to chrome </h2>:<h2>chrome</h2>}
-        </div>
-        <Button onClick={handleOpensys}>go bro</Button>
+        <Box sx={{ display: "none" }}>Detected platform: {platform}</Box>
         <MyLogo>
           <ReactSvgLogo />
         </MyLogo>
