@@ -11,6 +11,7 @@ export default function Layout({ children }) {
         <title>
           دکتر بیتا بهور | دندانپزشک بوشهر | ایمپلنت، زیبایی، عصب‌کشی
         </title>
+        <meta name="google-site-verification" content="9umNSaNI9-FjyQCd6GQXICZVlwZNf8UzUGl9htljDLM" />
         <meta
           name="description"
           content="مطب دندانپزشکی دکتر بیتا بهور در بوشهر - ارائه خدمات ایمپلنت، لمینت، عصب‌کشی، زیبایی، ترمیمی در میدان امام خمینی."
