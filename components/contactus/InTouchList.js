@@ -8,33 +8,26 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CallIcon from '@mui/icons-material/Call';
 import MailIcon from '@mui/icons-material/Mail';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import data from 'utils/data';
+import { MobileFriendly } from '@mui/icons-material';
+
+const ListWrapper = styled("div")({
+  li: {
+    textAlign: "right",
+    transition: "opacity 0.3s",
+    ":hover": {
+      opacity: "0.6"
+    }
+  },
+});
 
 export default function InTouchList() {
-  const ListWrapper = styled("div")({
-    li: {
-      textAlign: "right",
-      cursor:"pointer",
-      ":hover":{
-       opacity:"0.6"
-      }
-    },
-  });
-
-  const handlePhoneClick = (phoneNumber) => {
-    window.location.href = `tel:${phoneNumber}`;
-  };
-
-  const handleEmailClick = (email) => {
-    window.location.href = `mailto:${email}`;
-  };
-
-  const handleWhatsAppClick = (phoneNumber) => {
-    window.location.href = `https://wa.me/${phoneNumber}`;
-  };
-
+  const {info}=data;
   return (
     <ListWrapper>
       <List sx={{ width: '100%' }}>
+
+        {/* آدرس مطب */}
         <ListItem>
           <ListItemAvatar>
             <Avatar variant='square' sx={{ bgcolor: "secondary.main" }}>
@@ -43,36 +36,48 @@ export default function InTouchList() {
           </ListItemAvatar>
           <ListItemText
             primary="آدرس"
-            secondary="-میدان امام خمینی-نبش خیابان بیسیم-کوچه لاله یک"
+            secondary={`${info.address}`}
           />
         </ListItem>
-        
-        <ListItem  onClick={() => handlePhoneClick("09054851056")}>
+
+        {/* تماس  موبایل */}
+        <ListItem component="a" href={`tel:${info.mobile}`} aria-label="تماس موبایل با مطب">
+          <ListItemAvatar>
+            <Avatar variant='square' sx={{ bgcolor: "secondary.main" }}>
+              <MobileFriendly />
+            </Avatar>
+          </ListItemAvatar>
+          <ListItemText primary="موبایل" secondary={`${info.mobile}`} sx={{textAlign:"right"}}/>
+        </ListItem>
+
+
+        {/* ثابت تماس تلفنی */}
+        <ListItem component="a" href={`tel:${info.telephon}`} aria-label="تماس تلفنی با مطب">
           <ListItemAvatar>
             <Avatar variant='square' sx={{ bgcolor: "secondary.main" }}>
               <CallIcon />
             </Avatar>
           </ListItemAvatar>
-          <ListItemText primary="تلفن تماس" secondary="09054851056" />
+          <ListItemText primary="تلفن ثابت" secondary={`${info.telephon}`} sx={{textAlign:"right"}}/>
         </ListItem>
 
-        <ListItem  onClick={() => handleEmailClick("drbitabehvarmatab@gmail.com")}>
-          <ListItemAvatar>
-            <Avatar variant='square' sx={{ bgcolor: "secondary.main" }}>
-              <MailIcon />
-            </Avatar>
-          </ListItemAvatar>
-          <ListItemText primary="ایمیل" secondary="drbitabehvarmatab@gmail.com" />
-        </ListItem>
+        {/* واتساپ */}
+        <ListItem
+          component="a"
+          href={info.whatsApp}
+          target="_blank"
+          rel="noopener"
+          aria-label="ارتباط واتساپی با مطب"
 
-        <ListItem  onClick={() => handleWhatsAppClick("+989054851056")}>
+        >
           <ListItemAvatar>
             <Avatar variant='square' sx={{ bgcolor: "secondary.main" }}>
               <WhatsAppIcon />
             </Avatar>
           </ListItemAvatar>
-          <ListItemText primary="واتساپ" secondary="09054851056" />
+          <ListItemText primary="واتساپ" secondary={`${info.mobile}`} sx={{textAlign:"right"}} />
         </ListItem>
+
       </List>
     </ListWrapper>
   );

@@ -1,10 +1,11 @@
 import { Box, Grid, Typography } from "@mui/material"; 
 import topbarClasses from "./TopBar.module.css";
-import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
 import theme from "utils/theme";
 import { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import SocialIcons from "components/other/SocialIcons";
+import data from "utils/data";
+import { MobileFriendly } from "@mui/icons-material";
 
 const ScrollBarTrack = styled(Box)(({ theme }) => ({
   width: "100%",
@@ -34,14 +35,14 @@ const getDocHeight = () => {
 };
 
 // Ring animation
-const RingAnimation = styled(PhoneInTalkIcon)(({ theme }) => ({
+const RingAnimation = styled(MobileFriendly)(({ theme }) => ({
   fontSize: "16px",
   marginLeft: "2px",
   animation: "ring 3s infinite", // Ring animation every 3 seconds
   '@keyframes ring': {
     '0%': {
       transform: 'scale(1)',
-      boxShadow: '0 0 5px 2px rgba(99, 200, 255,0.5)', // start with a soft glow
+      boxShadow: '0 0 5px 2px rgba(99, 200, 255,0.4)', 
     },
     '50%': {
       transform: 'scale(1.2)', // slightly increase the size
@@ -49,14 +50,14 @@ const RingAnimation = styled(PhoneInTalkIcon)(({ theme }) => ({
     },
     '100%': {
       transform: 'scale(1)', // return to original size
-      boxShadow: '0 0 5px 2px rgba(99, 200, 255,0.5)', // return to soft glow
+      boxShadow: '0 0 5px 2px rgba(99, 200, 255,0.4)', // return to soft glow
     }
   }
 }));
 
 export default function TopBar() {
   const [scroller, setScroller] = useState(0);
-
+  const {info}=data;
   const handleScroll = (e) => {
     const scrollTop = window.pageYOffset;
     const winHeight = window.innerHeight;
@@ -87,7 +88,8 @@ export default function TopBar() {
             <ul className={topbarClasses.topbarList}>
               <li>
                 <a
-                  href="tel:09054851056"
+                  href={`tel:${info.mobile}`}
+                  aria-label="تماس با مطب"
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -101,11 +103,10 @@ export default function TopBar() {
                     component="span"
                     color="primary.main"
                   >
-                    تلفن تماس : 09054851056
+                    تلفن تماس : {info.mobileText}
                   </Typography>
                 </a>
               </li>
-              {/* <li><AccessTimeIcon sx={{fontSize:"16px",marginLeft:"2px"}}/><Typography variant='overline' component={"span"} color="primary.main"> ساعات کاری:شنبه تا پنجشنبه از ساعت 8:00 الی 9:00</Typography></li> */}
             </ul>
           </Grid>
           <Grid item xs={6} sm={6}>

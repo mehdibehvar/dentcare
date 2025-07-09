@@ -3,7 +3,9 @@ import React from "react";
 import SocialIcons from "components/other/SocialIcons";
 import styled from "@emotion/styled";
 import InTouchList from "components/contactus/InTouchList";
+import data from "utils/data";
 export default function Footer() {
+  const { info } = data;
   const FooterWrapper = styled("footer")(({ theme }) => ({
     backgroundColor: theme.palette.primary.light,
     // marginBottom: theme.spacing(2),
@@ -33,13 +35,12 @@ export default function Footer() {
       },
     },
   }));
-  const RightBox = styled('div')(({ theme }) => ({
+  const RightBox = styled("div")(({ theme }) => ({
     marginTop: theme.spacing(2),
     display: "flex",
-      [theme.breakpoints.down("lg")]: {
-      marginBottom:50
-  },
-
+    [theme.breakpoints.down("lg")]: {
+      marginBottom: 50,
+    },
   }));
   return (
     <FooterWrapper>
@@ -50,10 +51,10 @@ export default function Footer() {
             <Box sx={{ padding: 2 }}>
               <Typography variant="h6" component={"div"}>
                 {" "}
-                با ما در تماس باشید...
+                ارتباط با ما{" "}
               </Typography>
               <Typography variant="caption" component={"p"}>
-                راههای ارتباطی با ما به صورت تمام وقت در خدمت رسانی به شما است.
+                شما می‌توانید از طریق راه‌های ارتباطی زیر با ما تماس بگیرید.{" "}
               </Typography>
             </Box>
             <InTouchList />
@@ -65,25 +66,14 @@ export default function Footer() {
             با ما در تماس باشید...
           </Typography>
           <RightBox>
-            <SocialIcons gap={"20px"} iconColor={"#63C8FF"}/>
+            <SocialIcons
+              gap={"20px"}
+              iconColor={"#63C8FF"}
+            />
           </RightBox>
         </Grid>
       </Grid>
-        <Grid sm={1}></Grid>
-      {/* <Grid item xs={12}>
-        <BaseBox>
-          <Typography variant="caption" component={"span"}>
-            Designed by{" "}
-            <Typography variant="subtitile1" component={"strong"}>
-              Mehdi Behvar
-            </Typography>{" "}
-            with:
-          </Typography>
-          <Typography variant="caption" component="i">
-            <VolunteerActivismIcon />
-          </Typography>
-        </BaseBox>
-      </Grid> */}
+      <Grid sm={1}></Grid>
     </FooterWrapper>
   );
 }

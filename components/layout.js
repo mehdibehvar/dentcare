@@ -9,35 +9,253 @@ export default function Layout({ children }) {
     <>
       <Head>
         <title>
-          دکتر بیتا بهور | دندانپزشکی در بوشهر | ایمپلنت، عصب‌کشی، زیبایی
+          دکتر بیتا بهور | دندانپزشک بوشهر | ایمپلنت، زیبایی، عصب‌کشی
         </title>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
         <meta
           name="description"
-          content="دندانپزشکی دکتر بیتا بهور در بوشهر - خدمات ایمپلنت، عصب‌کشی، جرم‌گیری، کامپوزیت دندان، بلیچینگ، لمینت و زیبایی. نوبت‌دهی آسان، محیط حرفه‌ای و مدرن در میدان امام خمینی بوشهر."
+          content="مطب دندانپزشکی دکتر بیتا بهور در بوشهر - ارائه خدمات ایمپلنت، لمینت، عصب‌کشی، زیبایی، ترمیمی در میدان امام خمینی."
         />
-         {/* 👇 این قسمت Structured Data */}
+        <meta
+          property="og:title"
+          content="دندانپزشکی دکتر بیتا بهور در بوشهر"
+        />
+        <meta
+          property="og:description"
+          content="بهترین دندانپزشک در بوشهر با خدمات کامل و تخصصی."
+        />
+        <meta
+          property="og:image"
+          content="https://dentistbitabehvar.ir/logo.jpg"
+        />
+        <meta property="og:url" content="https://dentistbitabehvar.ir" />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        {/* 👇 داده ساختاریافته برای گوگل */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Dentist",
-              name: "دکتر سارا بهور",
-              image: "https://example.com/logo.jpg",
+              name: "دکتر بیتا بهور",
+              image: "https://dentistbitabehvar.ir/logo.jpg",
+              url: "https://dentistbitabehvar.ir",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "میدان امام خمینی",
                 addressLocality: "بوشهر",
                 addressCountry: "IR",
               },
-              openingHours: "Sa-Th 10:00-22:00",
+              openingHours: "Sa-Th 09:00-17:00",
               telephone: "077-33553650",
               priceRange: "IRR",
+              hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                name: "خدمات دندانپزشکی",
+                itemListElement: [
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "درمان ریشه",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "عصب‌کشی",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "جرم‌گیری و بروساژ",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "بلیچینگ (سفید کردن دندان)",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "لمینت دندان",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "کامپوزیت ونیر",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "ارتودنسی",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "ایمپلنت دندان (کاشت)",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "کشیدن دندان",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "ترمیم و پر کردن دندان",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "روکش دندان",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "درمان دندان عقل",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "بستن فاصله دندانی",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "اصلاح طرح لبخند",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "دندانپزشکی زیبایی",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "دندانپزشکی کودکان",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "درمان پوسیدگی",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "فلورایدتراپی",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "طراحی لبخند دیجیتال",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "جراحی لثه و پیوند",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "درمان ریشه مجدد",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "دندانپزشکی بدون درد",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "دندانپزشکی با لیزر",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "پروتز ثابت و متحرک",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "دندان مصنوعی",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "فیشور سیلانت",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "معاینه دندان",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "MedicalProcedure",
+                      name: "رادیوگرافی دیجیتال",
+                    },
+                  },
+                ],
+              },
             }),
           }}
         />
       </Head>
+
       <TopBar />
       <Box sx={{ backgroundColor: "#FFFFFF" }}>
         {children}
