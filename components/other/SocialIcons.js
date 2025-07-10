@@ -30,14 +30,14 @@ export default function SocialIcons({ gap, iconColor }) {
       <a href={`tel:${mobile}`} aria-label="تماس با مطب">
         <MobileFriendly />
       </a>
-      <a
+      {/* <a
         href="https://www.youtube.com"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="کانال یوتیوب"
       >
         <YouTubeIcon />
-      </a>
+      </a> */}
     </SocialIconsBox>
   );
 }

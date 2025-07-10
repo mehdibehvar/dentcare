@@ -8,10 +8,16 @@ export default function Layout({ children }) {
   return (
     <>
       <Head>
+        <link rel="icon" href="/favicons/favicon.ico" />
+
         <title>
           دکتر بیتا بهور | دندانپزشک بوشهر | ایمپلنت، زیبایی، عصب‌کشی
         </title>
-        <meta name="google-site-verification" content="9umNSaNI9-FjyQCd6GQXICZVlwZNf8UzUGl9htljDLM" />
+
+        <meta
+          name="google-site-verification"
+          content="9umNSaNI9-FjyQCd6GQXICZVlwZNf8UzUGl9htljDLM"
+        />
         <meta
           name="description"
           content="مطب دندانپزشکی دکتر بیتا بهور در بوشهر - ارائه خدمات ایمپلنت، لمینت، عصب‌کشی، زیبایی، ترمیمی در میدان امام خمینی."
@@ -26,7 +32,7 @@ export default function Layout({ children }) {
         />
         <meta
           property="og:image"
-          content="https://dentistbitabehvar.ir/logo.jpg"
+          content="/og-image.png"
         />
         <meta property="og:url" content="https://dentistbitabehvar.ir" />
         <meta name="twitter:card" content="summary_large_image" />

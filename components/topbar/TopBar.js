@@ -103,7 +103,7 @@ export default function TopBar() {
                     component="span"
                     color="primary.main"
                   >
-                    تلفن تماس : {info.mobileText}
+                     تماس : {info.mobileText}
                   </Typography>
                 </a>
               </li>
