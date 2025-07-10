@@ -29,14 +29,7 @@ export default function Banner() {
       backgroundPosition: "70% 0",
     },
   }));
-  const MyLogo = styled("div")(({ theme }) => ({
-    width: 70,
-    height: 50,
-    backgroundColor: "primary.main",
-    position: "absolute",
-    top: 170,
-    left: 300,
-  }));
+
   const [platform, setPlatform] = useState("");
   useEffect(() => {
     var standalone = window.navigator.standalone,
@@ -71,10 +64,7 @@ export default function Banner() {
   return (
     <BannerSection>
       <Box>
-        <Box sx={{ display: "none" }}>Detected platform: {platform}</Box>
-        <MyLogo>
-          {/* <ReactSvgLogo /> */}
-        </MyLogo>
+        {/* <Box sx={{ display: "none" }}>Detected platform: {platform}</Box> */}
         <BannerDetails />
       </Box>
     </BannerSection>

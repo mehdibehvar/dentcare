@@ -26,37 +26,37 @@ export default function BannerDetails() {
     },
   }));
 
-  return (
-    <DetailsWrapper>
-      <Grid>
-        <Typography
-          variant="h3"
-          component={"h3"}
-          pr={"20px"}
-          className={bannerStyles.banner_title}
-        >
-           بهترین تجربه درمان
-           {" "}
-          <Typography variant="h4" component={"span"} color="primary.main">
-            زندگی  
-          </Typography>{" "}
-          را با ما داشته باشید.
-        </Typography>
-        <BannerText
-          variant="h5"
-          component="p"
-          mb={"20px"}
-          pr={"20px"}
-          className={bannerStyles.banner_desc}
-        >
-          مطب دندانپزشکی دکتر{" "}
-          <Typography variant="h4" component={"span"} color="primary.main">
-            بیتا بهور
-          </Typography>{" "}
-          ارایه دهنده بهترین و با کیفیت ترین خدمات دندانپزشکی به شما
-          دوست عزیز می باشد.
-        </BannerText>
-      </Grid>
-    </DetailsWrapper>
-  );
+ return (
+  <DetailsWrapper>
+    <Grid>
+      <Typography
+        variant="h1"
+        component="h1"
+        pr="20px"
+        className={bannerStyles.banner_title}
+      >
+        خدمات حرفه‌ای{" "}
+        <Typography component="span" color="primary.main" variant="inherit">
+          دندانپزشکی در بوشهر
+        </Typography>{" "}
+        با دکتر بیتا بهور
+      </Typography>
+
+      <BannerText
+        variant="h5"
+        component="p"
+        mb="20px"
+        pr="20px"
+        className={bannerStyles.banner_desc}
+      >
+        مطب دندانپزشکی{" "}
+        <Typography component="span" color="primary.main" variant="inherit">
+          دکتر بیتا بهور
+        </Typography>{" "}
+        واقع در میدان امام خمینی بوشهر، ارائه‌دهنده خدماتی مانند ایمپلنت، لمینت، درمان ریشه، زیبایی لبخند، عصب‌کشی و معاینه تخصصی با پیشرفته‌ترین تجهیزات روز است.
+      </BannerText>
+    </Grid>
+  </DetailsWrapper>
+);
+
 }

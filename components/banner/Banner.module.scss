@@ -1,13 +1,19 @@
-.banner_title{
-    word-spacing: 2px;
-    margin: 0 0 10px;
-    text-transform: capitalize;
-    color: #000;
-    line-height: 66px;
-    width: 830px;
-    @media screen and (max-width:600px) {
-       width: 340px;
-       font-size: 28px;
-       line-height: 48px;
-    }
+.banner_title {
+  // word-spacing: 2px;
+  margin: 0 0 30px;
+  color: #000;
+  font-size: 48px;
+  line-height: 60px;
+  @media screen and (max-width: 600px) {
+    //    width: 340px;
+    font-size: 28px;
+    line-height: 48px;
+  }
+}
+.banner_desc {
+  line-height: 38px;
+  @media screen and (max-width: 600px) {
+    font-size: 20px;
+    line-height: 32px;
+  }
 }
