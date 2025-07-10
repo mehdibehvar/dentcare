@@ -1,48 +1,78 @@
+// SEO-friendly version of AboutUs tabs (all content rendered, toggle only hides visually)
 import { Container, Grid, Typography } from "@mui/material";
 import { GraySection } from "components/other/styledComponents";
 import TreatIcon from "components/other/TreatIcon";
 import { useState } from "react";
-import {  Tab, TabList } from "./aboutusStyledComponents";
+import { Tab, TabList } from "./aboutusStyledComponents";
 import TabContent from "./TabContent";
 
-export default function AboutUs({aboutusTabInfo}) {
-  const [tabDisplay,setTabDisplay]=useState("هدف ما")
-   function handleChangeTab(tabName) {
-       setTabDisplay(tabName)
+export default function AboutUs({ aboutusTabInfo }) {
+  const [tabDisplay, setTabDisplay] = useState("هدف ما");
+
+  function handleChangeTab(tabName) {
+    setTabDisplay(tabName);
   }
-const tabsContentList=aboutusTabInfo.map((tabInfo,index)=><TabContent key={index} tabDisplay={tabDisplay} tabInfo={tabInfo}/>)
+
+  // Define icons based on tab title
+  const getIconClass = (title) => {
+    switch (title) {
+      case "هدف ما":
+        return "fa fa-hospital";
+      case "دید ما":
+        return "fa fa-stethoscope";
+      case "درباره من":
+        return "fas fa-user-md";
+      default:
+        return "fa fa-info-circle";
+    }
+  };
+
   return (
     <GraySection>
       <Container>
-        <Grid>
-         <TreatIcon/>
-          <Typography variant="h5" component={"h1"}>
+        <Grid sx={{ mb: { sm: '24px' } }}>
+          <TreatIcon />
+          <Typography variant="h5" component="h1">
             درباره ما:
           </Typography>
-          <Typography variant="caption" component={"p"}> 
-            هر انچه شما میخواهید درباره ما بدانید.
+          <Typography variant="caption" component="p">
+            هر آنچه شما می‌خواهید درباره ما بدانید.
           </Typography>
         </Grid>
+
         <Grid container spacing={2}>
-            {/* ///tabs of about us///// */}
-          <Grid item xs={12} sm={12} md={2} lg={2}>
-            <div className="aboutTabs">
+          {/* Tabs */}
+          <Grid item xs={12} sm={12} md={2} lg={2} >
+            <div className="aboutTabs" >
               <TabList>
-                <Tab onClick={()=>handleChangeTab("هدف ما")} tabColor={"#0FACEF"}>
-                <div><i className="fa fa-hospital"></i>هدف ما</div>
-                </Tab>
-                <Tab onClick={()=>handleChangeTab("دید ما")}  margin="8px" tabColor="#E3EBF7"><div><i className="fa fa-stethoscope"></i>دید ما</div></Tab>
-                <Tab onClick={()=>handleChangeTab("درباره من")}  tabColor="#FAF2E6">
-               <div> <i className="fas fa-user-md"></i>
-                  درباره من</div>
-                 </Tab>
+                {aboutusTabInfo.map((tab, index) => (
+                  <Tab
+                    key={tab.title}
+                    onClick={() => handleChangeTab(tab.title)}
+                    tabColor={tab.title === tabDisplay ? "#0FACEF" : "#f0f0f0"}
+                    style={{ marginBottom: index !== aboutusTabInfo.length - 1 ? "12px" : 0 }}
+                  >
+                    <div>
+                      <i className={getIconClass(tab.title)}></i> {tab.title}
+                    </div>
+                  </Tab>
+                ))}
               </TabList>
             </div>
           </Grid>
-{/* //////////tabcontent/////////////////// */}
+
+          {/* Tab contents - all rendered for SEO */}
           <Grid item xs={12} sm={12} md={10} lg={10}>
             <div className="tab-content">
-          {tabsContentList}
+              {aboutusTabInfo.map((tabInfo, index) => (
+                <div
+                  key={index}
+                  id={`about-${index}`}
+                  style={{ display: tabDisplay === tabInfo.title ? "block" : "none" }}
+                >
+                  <TabContent tabDisplay={tabInfo.title} tabInfo={tabInfo} />
+                </div>
+              ))}
             </div>
           </Grid>
         </Grid>
