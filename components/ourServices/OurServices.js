@@ -3,25 +3,33 @@ import { LightSection } from "components/other/styledComponents";
 import TreatIcon from "components/other/TreatIcon";
 import ServiceBox from "./ServiceBox";
 
-export default function OurServices({servicesInfo}) {
-    const servicesBoxList=servicesInfo.map(service=> <Grid key={service.title} item xs={12} sm={6} md={6} lg={4}>
-    <ServiceBox boxInfo={service}/>
-      </Grid>)
+export default function OurServices({ servicesInfo }) {
+  const servicesBoxList = servicesInfo.map((service, index) => (
+    <Grid key={service.title} item xs={12} sm={6} md={6} lg={4}>
+      <ServiceBox boxInfo={service} position={index + 1} />
+    </Grid>
+  ));
+
   return (
     <LightSection>
       <Container>
         <Grid>
           <TreatIcon />
-          <Typography variant="h5" mb={1} component={"h1"}>
-            خدمات ما :
+          <Typography variant="h5" mb={1} component="h2">
+            خدمات دندانپزشکی ما
           </Typography>
-          <Typography variant="caption" mb={2} component={"p"} color={"text.disabled"}>
-            .ما در اینجا تمامی خدمات دندانپزشکی را به مراجعه کنندگان عزیز با
-            بالاترین کیفیت ارایه میدهیم.
+          <Typography
+            variant="body1"
+            mb={2}
+            component="p"
+            color="text.secondary"
+          >
+            ما در مطب دکتر بیتا بهور تمامی خدمات تخصصی دندانپزشکی را با بهترین
+            کیفیت و تجهیزات به مراجعه‌کنندگان عزیز ارائه می‌دهیم.
           </Typography>
         </Grid>
         <Grid container spacing={2}>
-        {servicesBoxList}
+          {servicesBoxList}
         </Grid>
       </Container>
     </LightSection>
