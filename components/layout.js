@@ -34,6 +34,10 @@ export default function Layout({ children }) {
           property="og:image"
           content="https://dentistbitabehvar.vercel.app/og-image.png"
         />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="دندانپزشکی دکتر بیتا بهور در بوشهر" />
+        <meta property="og:image:type" content="image/png" />
         <meta property="og:url" content="https://dentistbitabehvar.vercel.app" />
         <meta name="twitter:card" content="summary_large_image" />
 
