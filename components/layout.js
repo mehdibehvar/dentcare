@@ -32,9 +32,9 @@ export default function Layout({ children }) {
         />
         <meta
           property="og:image"
-          content="/og-image.png"
+          content="https://dentistbitabehvar.vercel.app/og-image.png"
         />
-        <meta property="og:url" content="https://dentistbitabehvar.ir" />
+        <meta property="og:url" content="https://dentistbitabehvar.vercel.app" />
         <meta name="twitter:card" content="summary_large_image" />
 
         {/* 👇 داده ساختاریافته برای گوگل */}
@@ -45,8 +45,8 @@ export default function Layout({ children }) {
               "@context": "https://schema.org",
               "@type": "Dentist",
               name: "دکتر بیتا بهور",
-              image: "https://dentistbitabehvar.ir/logo.jpg",
-              url: "https://dentistbitabehvar.ir",
+              image: "https://dentistbitabehvar.vercel.app/logo.jpg",
+              url: "https://dentistbitabehvar.vercel.app",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "میدان امام خمینی",
