@@ -43,7 +43,7 @@ export default function AboutUs({ aboutusTabInfo }) {
         <Grid container spacing={2}>
           {/* Tabs */}
           <Grid item xs={12} sm={12} md={2} lg={2} >
-            <div className="aboutTabs" >
+            <div className="aboutTabs" style={{height:"100%"}}>
               <TabList>
                 {aboutusTabInfo.map((tab, index) => (
                   <Tab

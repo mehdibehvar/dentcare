@@ -62,9 +62,14 @@ import styled from "@emotion/styled";
     },
   }));
   export const TabList = styled("ul")(({ theme }) => ({
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
     [theme.breakpoints.down("md")]: {
       display: "flex",
-      justifyContent: "space-evenly",
+    flexDirection: "row",
+    justifyContent: "space-evenly"
     },
   }));
   /////////////////////end style////////////
