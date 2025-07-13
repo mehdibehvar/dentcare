@@ -5,24 +5,11 @@ import React from 'react'
 import data from 'utils/data'
 
 
-export default function Aboutus({dataObject}) {
+export default function Aboutus() {
   return (
     <Layout>
       <Navbar/>
-      <AboutUs aboutusTabInfo={dataObject}/>
+      <AboutUs aboutusTabInfo={data.aboutusTabInfo}/>
     </Layout>
   )
-}
-export async function getStaticProps() {
-  const dataObject=data.aboutusTabInfo;
-  if(!dataObject){
-    return{
-      notFound:true
-    }
-  }
-  return{
-    props:{
-      dataObject
-    }
-  }
 }

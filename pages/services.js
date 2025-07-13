@@ -3,24 +3,11 @@ import Navbar from 'components/navbar/Navbar'
 import OurServices from 'components/ourServices/OurServices';
 import data from 'utils/data'
 
-export default function ServicesPage({dataObject}) {
+export default function ServicesPage() {
   return (
     <Layout>
       <Navbar/>
-       <OurServices servicesInfo={dataObject}/>
+       <OurServices servicesInfo={data.servicesInfo}/>
     </Layout>
   )
-}
-export async function getStaticProps() {
-  const dataObject=data.servicesInfo;
-  if(!dataObject){
-    return{
-      notFound:true
-    }
-  }
-  return{
-    props:{
-      dataObject
-    }
-  }
 }

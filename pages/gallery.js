@@ -3,24 +3,11 @@ import Gallery from 'components/gallery/Gallery'
 import Navbar from 'components/navbar/Navbar'
 import data from 'utils/data'
 
-export default function GalleryPage({dataObject}) {
+export default function GalleryPage() {
   return (
     <Layout>
       <Navbar/>
-       <Gallery gallery={dataObject}/>
+       <Gallery gallery={data.gallery}/>
     </Layout>
   )
-}
-export async function getStaticProps() {
-  const dataObject=data.gallery;
-  if(!dataObject){
-    return{
-      notFound:true
-    }
-  }
-  return{
-    props:{
-      dataObject
-    }
-  }
 }

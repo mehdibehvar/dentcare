@@ -8,8 +8,8 @@ import WhiteningSection from "components/whitening/WhiteningSection";
 import Head from "next/head";
 import data from "utils/data";
 import MapSection from "components/map-section/MapSection";
-export default function Home({ dataObject }) {
-  const { aboutusTabInfo, gallery, servicesInfo } = dataObject;
+export default function Home() {
+  const { aboutusTabInfo, gallery, servicesInfo } = data;
   return (
     <>
       <Head>
@@ -28,17 +28,4 @@ export default function Home({ dataObject }) {
     </>
   );
 }
-export async function getStaticProps() {
-  const dataObject = data;
-  if (!dataObject) {
-    return {
-      notFound: true,
-    };
-  }
-  return {
-    props: {
-      dataObject,
-    },
-    revalidate: 5,
-  };
-}
+

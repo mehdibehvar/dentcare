@@ -32,13 +32,13 @@ export default function Layout({ children }) {
         />
         <meta
           property="og:image"
-          content="https://dentistbitabehvar.vercel.app/og-image.png"
+          content="http://suntooth.ir/og-image.png"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="دندانپزشکی دکتر بیتا بهور در بوشهر" />
         <meta property="og:image:type" content="image/png" />
-        <meta property="og:url" content="https://dentistbitabehvar.vercel.app" />
+        <meta property="og:url" content="http://suntooth.ir" />
         <meta name="twitter:card" content="summary_large_image" />
 
         {/* 👇 داده ساختاریافته برای گوگل */}
@@ -49,8 +49,8 @@ export default function Layout({ children }) {
               "@context": "https://schema.org",
               "@type": "Dentist",
               name: "دکتر بیتا بهور",
-              image: "https://dentistbitabehvar.vercel.app/logo.jpg",
-              url: "https://dentistbitabehvar.vercel.app",
+              image: "http://suntooth.ir/logo-social.png",
+              url: "http://suntooth.ir",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "میدان امام خمینی",
