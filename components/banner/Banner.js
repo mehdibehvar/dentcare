@@ -30,36 +30,36 @@ export default function Banner() {
     },
   }));
 
-  const [platform, setPlatform] = useState("");
-  useEffect(() => {
-    var standalone = window.navigator.standalone,
-      userAgent = window.navigator.userAgent.toLowerCase(),
-      safari = /safari/.test(userAgent),
-      ios = /iphone|ipod|ipad/.test(userAgent);
+  // const [platform, setPlatform] = useState("");
+  // useEffect(() => {
+  //   var standalone = window.navigator.standalone,
+  //     userAgent = window.navigator.userAgent.toLowerCase(),
+  //     safari = /safari/.test(userAgent),
+  //     ios = /iphone|ipod|ipad/.test(userAgent);
 
-    console.log("standalone:", standalone);
-    console.log("userAgent:", userAgent);
-    console.log("safari:", safari);
-    console.log("ios:", ios);
+  //   console.log("standalone:", standalone);
+  //   console.log("userAgent:", userAgent);
+  //   console.log("safari:", safari);
+  //   console.log("ios:", ios);
 
-    if (ios) {
-      if (!standalone && safari) {
-        console.log("// Safari");
-        setPlatform("Safari on iOS");
-      } else if (!standalone && !safari) {
-        console.log("// iOS webview");
-        setPlatform("iOS Webview");
-      }
-    } else {
-      if (userAgent.includes("wv")) {
-        console.log("      // Android webview");
-        setPlatform("Android Webview");
-      } else {
-        console.log("     // Chrome");
-        setPlatform("Chrome or Other");
-      }
-    }
-  }, []);
+  //   if (ios) {
+  //     if (!standalone && safari) {
+  //       console.log("// Safari");
+  //       setPlatform("Safari on iOS");
+  //     } else if (!standalone && !safari) {
+  //       console.log("// iOS webview");
+  //       setPlatform("iOS Webview");
+  //     }
+  //   } else {
+  //     if (userAgent.includes("wv")) {
+  //       console.log("      // Android webview");
+  //       setPlatform("Android Webview");
+  //     } else {
+  //       console.log("     // Chrome");
+  //       setPlatform("Chrome or Other");
+  //     }
+  //   }
+  // }, []);
 
   return (
     <BannerSection>

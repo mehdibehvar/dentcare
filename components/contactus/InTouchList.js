@@ -11,15 +11,28 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import data from 'utils/data';
 import { MobileFriendly } from '@mui/icons-material';
 
-const ListWrapper = styled("div")({
+const ListWrapper = styled("div")(({theme})=>({
   li: {
     textAlign: "right",
     transition: "opacity 0.3s",
     ":hover": {
       opacity: "0.6"
-    }
+    },
+    [theme.breakpoints.down("sm")]: {
+      paddingRight:0,
+    },
   },
-});
+  a:{
+    textAlign: "right",
+    transition: "opacity 0.3s",
+    ":hover": {
+      opacity: "0.6"
+    },
+    [theme.breakpoints.down("sm")]: {
+      paddingRight:0,
+    },
+  }
+}));
 
 export default function InTouchList() {
   const {info}=data;
@@ -62,7 +75,7 @@ export default function InTouchList() {
         </ListItem>
 
         {/* واتساپ */}
-        <ListItem
+        {/* <ListItem
           component="a"
           href={info.whatsApp}
           target="_blank"
@@ -76,7 +89,7 @@ export default function InTouchList() {
             </Avatar>
           </ListItemAvatar>
           <ListItemText primary="واتساپ" secondary={`${info.mobile}`} sx={{textAlign:"right"}} />
-        </ListItem>
+        </ListItem> */}
 
       </List>
     </ListWrapper>

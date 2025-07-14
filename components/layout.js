@@ -5,19 +5,24 @@ import ScrollUpIcon from "./ScrollUpIcon";
 import Footer from "./footer/Footer";
 
 export default function Layout({ children }) {
+  const hostname = typeof window !== "undefined" ? window.location.hostname : "";
+
+  const verificationTag =
+    hostname === "suntooth.irsuntooth.ir"
+      ? "GExUKOntz8gtKWiCsZk4YkMF0yfaNdDd4NPlR3Lih0E"
+      : hostname === "dentistbitabehvar.vercel.app"
+        ? "googlebbb45659266ed9d6"
+        : "GExUKOntz8gtKWiCsZk4YkMF0yfaNdDd4NPlR3Lih0E";
   return (
     <>
       <Head>
         <link rel="icon" href="/favicons/favicon.ico" />
-
+        {verificationTag && (
+          <meta name="google-site-verification" content={verificationTag} />
+        )}
         <title>
           دکتر بیتا بهور | دندانپزشک بوشهر | ایمپلنت، زیبایی، عصب‌کشی
         </title>
-
-        <meta
-          name="google-site-verification"
-          content="9umNSaNI9-FjyQCd6GQXICZVlwZNf8UzUGl9htljDLM"
-        />
         <meta
           name="description"
           content="مطب دندانپزشکی دکتر بیتا بهور در بوشهر - ارائه خدمات ایمپلنت، لمینت، عصب‌کشی، زیبایی، ترمیمی در میدان امام خمینی."

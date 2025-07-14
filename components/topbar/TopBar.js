@@ -17,7 +17,9 @@ const ScrollBarTrack = styled(Box)(({ theme }) => ({
   zIndex: 1000,
 }));
 
-const ScrollBar = styled(Box)(({ theme, scrollBarWidth }) => ({
+const ScrollBar = styled(Box, {
+  shouldForwardProp: (prop) => prop !== "scrollBarWidth"
+})(({ theme, scrollBarWidth }) => ({
   backgroundColor: theme.palette.primary.main,
   height: 8,
   width: `${scrollBarWidth}%`,

@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://suntooth.ir/api/sitemap
+Sitemap: https://dentistbitabehvar.vercel.app/api/sitemap

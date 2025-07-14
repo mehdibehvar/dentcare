@@ -19,24 +19,26 @@ const LightTooltip = styled(({ className, ...props }) => (
    
   },
 }));
-const ToolTipBox=styled(Box)(({theme})=>(props)=>({
- position:"fixed",
- bottom:"0",
- visibility:props.showTooltip,
- margin:theme.spacing(2),
- zIndex:"999",
- button:{
-  backgroundColor:theme.palette.primary.main,
-  color:theme.palette.secondary.main,
-  padding:2,
-  svg:{
-    fontSize:30
-  },
-  ":hover":{
-    backgroundColor:theme.palette.secondary.light
+const ToolTipBox = styled(Box, {
+  shouldForwardProp: (prop) => prop !== "showTooltip"
+})(({ theme, showTooltip }) => ({
+  position: "fixed",
+  bottom: "0",
+  visibility: showTooltip,
+  margin: theme.spacing(2),
+  zIndex: "999",
+  button: {
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.secondary.main,
+    padding: 2,
+    svg: {
+      fontSize: 30
+    },
+    ":hover": {
+      backgroundColor: theme.palette.secondary.light
+    }
   }
- }
-}))
+}));
 
 export default function ScrollUpIcon() {
     const [showTooltip,setShowTooltip]=useState("hidden");

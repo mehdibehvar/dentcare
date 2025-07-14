@@ -41,7 +41,7 @@ export default function TabContent({ tabDisplay, tabInfo }) {
                 alt="bitacare"
                 width={400}
                 height={320}
-                layout="responsive"
+                style={{ width: '100%', height: 'auto' }}
               />
             ) : (
               <Loader />

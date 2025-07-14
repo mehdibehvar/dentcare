@@ -30,26 +30,21 @@ export const HeroSection = styled("section")(({ theme }) => ({
     zIndex: "-1",
   },
 }));
-export const SocialIconsBox = styled(Box)(({ theme }) => (props) =>{
-  
-  return  (
-  
-  {
-
+export const SocialIconsBox = styled(Box, {
+  shouldForwardProp: (prop) => prop !== "iconColor" && prop !== "gap"
+})(({ theme, iconColor, gap }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-around",
-  gap: props.gap?? props.gap,
-
+  gap: gap ?? undefined,
   svg: {
     fontSize: "25px",
     marginLeft: "5px",
     transition: "all 1s ease",
-    color: props.iconColor,
+    color: iconColor,
     ":hover": {
       color: theme.palette.secondary.dark,
       transform: "rotate(10deg)",
     },
   },
-})
-});
+}));

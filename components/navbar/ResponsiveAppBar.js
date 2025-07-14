@@ -102,7 +102,7 @@ const ResponsiveAppBar = () => {
                     <SocialIconsBox>
                         {page[2]}
                     </SocialIconsBox>
-                    <Typography textAlign="center" color={"primary.main"} component={"a"}>{page[0]}</Typography>
+                    <Typography textAlign="center" color={"primary.main"} >{page[0]}</Typography>
                   </MenuItemBox>
 
                     </Link>

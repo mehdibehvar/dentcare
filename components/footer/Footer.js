@@ -9,6 +9,12 @@ export default function Footer() {
   const FooterWrapper = styled("footer")(({ theme }) => ({
     backgroundColor: theme.palette.primary.light,
     // marginBottom: theme.spacing(2),
+    paddingTop:theme.spacing(3),
+    paddingRight:theme.spacing(4),
+    [theme.breakpoints.down("sm")]: {
+      paddingRight:theme.spacing(2),
+      paddingBottom:theme.spacing(7),
+    },
   }));
   const BaseBox = styled(Box)(({ theme }) => ({
     direction: "ltr",
@@ -42,29 +48,40 @@ export default function Footer() {
       marginBottom: 50,
     },
   }));
+  const SectionHeader = styled("h4")(({ theme }) => ({
+    borderBottom: "4px solid",
+    borderBottomColor: theme.palette.secondary.main,
+    width:"fit-content",
+    marginBottom:theme.spacing(3),
+    padding:theme.spacing(1)
+
+  }))
   return (
     <FooterWrapper>
       <Grid container>
-        <Grid sm={1}></Grid>
-        <Grid sm={6}>
+        <Grid item xs={12} sm={4}>
+          <SectionHeader>
+            {" "}
+            درباره ما    
+          </SectionHeader>
+          <Typography variant="body1" component={"span"}>
+            مطب دندانپزشکی دکتر بیتا بهور واقع در میدان امام خمینی بوشهر، ارائه‌دهنده خدماتی مانند ایمپلنت، لمینت، درمان ریشه، زیبایی لبخند، عصب‌کشی و معاینه تخصصی با پیشرفته‌ترین تجهیزات روز است.
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={4} >
           <Box>
-            <Box sx={{ padding: 2 }}>
-              <Typography variant="h6" component={"div"}>
+              <SectionHeader>
                 {" "}
                 ارتباط با ما{" "}
-              </Typography>
-              <Typography variant="caption" component={"p"}>
-                شما می‌توانید از طریق راه‌های ارتباطی زیر با ما تماس بگیرید.{" "}
-              </Typography>
-            </Box>
+              </SectionHeader>
             <InTouchList />
           </Box>
         </Grid>
-        <Grid item xs={12} sm={4} sx={{ padding: 2 }}>
-          <Typography variant="h6" component={"div"}>
+        <Grid item xs={12} sm={4} >
+          <SectionHeader>
             {" "}
             با ما در تماس باشید...
-          </Typography>
+          </SectionHeader>
           <RightBox>
             <SocialIcons
               gap={"20px"}
@@ -73,7 +90,6 @@ export default function Footer() {
           </RightBox>
         </Grid>
       </Grid>
-      <Grid sm={1}></Grid>
     </FooterWrapper>
   );
 }
