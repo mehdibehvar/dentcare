@@ -8,7 +8,7 @@ export default function Layout({ children }) {
   const hostname = typeof window !== "undefined" ? window.location.hostname : "";
 
   const verificationTag =
-    hostname === "suntooth.irsuntooth.ir"
+    hostname === "suntooth.ir"
       ? "GExUKOntz8gtKWiCsZk4YkMF0yfaNdDd4NPlR3Lih0E"
       : hostname === "dentistbitabehvar.vercel.app"
         ? "googlebbb45659266ed9d6"
