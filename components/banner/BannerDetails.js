@@ -14,7 +14,7 @@ export default function BannerDetails() {
     margin: "auto",
     width: "100%",
     right: "0",
-
+     
 
   }));
 
@@ -33,7 +33,13 @@ export default function BannerDetails() {
         variant="h1"
         component="h1"
         pr="20px"
-        className={bannerStyles.banner_title}
+        color='text.dark'
+        sx={{
+          fontSize: { xs: '28px', sm: '48px' },
+          lineHeight: { xs: '48px', sm: '60px' },
+          paddingRight:{xs:'12px'},
+          marginBottom:{xs:'16px',sm:'30px'}
+        }}
       >
         خدمات حرفه‌ای{" "}
         <Typography component="span" color="primary.main" variant="inherit">

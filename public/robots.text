@@ -1,5 +1,5 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://suntooth.ir/api/sitemap
-Sitemap: https://dentistbitabehvar.vercel.app/api/sitemap
+Sitemap: https://suntooth.ir/sitemap.xml
+Sitemap: https://dentistbitabehvar.vercel.app/sitemap.xml

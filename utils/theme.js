@@ -19,6 +19,7 @@ const theme = createTheme({
       primary: "#333333",
       secondary: "#666666",
       disabled: "#999999",
+      dark:"#0d0d0d"
     },
     background: {
       paper: "#FAFAFA",

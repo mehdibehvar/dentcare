@@ -12,7 +12,7 @@ export default function Footer() {
     paddingTop:theme.spacing(3),
     paddingRight:theme.spacing(4),
     [theme.breakpoints.down("sm")]: {
-      paddingRight:theme.spacing(2),
+      padding:theme.spacing(2),
       paddingBottom:theme.spacing(7),
     },
   }));
@@ -53,12 +53,16 @@ export default function Footer() {
     borderBottomColor: theme.palette.secondary.main,
     width:"fit-content",
     marginBottom:theme.spacing(3),
-    padding:theme.spacing(1)
+    padding:theme.spacing(1),
+    [theme.breakpoints.down("sm")]: {
+      ":first-of-type":{ marginTop:theme.spacing(2)},
+      marginBottom:theme.spacing(1),
+    },
 
   }))
   return (
     <FooterWrapper>
-      <Grid container>
+      <Grid container rowSpacing={3}>
         <Grid item xs={12} sm={4}>
           <SectionHeader>
             {" "}

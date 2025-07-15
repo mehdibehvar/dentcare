@@ -31,7 +31,12 @@ const ListWrapper = styled("div")(({theme})=>({
     [theme.breakpoints.down("sm")]: {
       paddingRight:0,
     },
-  }
+  },
+  ul:{
+    [theme.breakpoints.down("sm")]: {
+      paddingTop:0,
+    },
+  },
 }));
 
 export default function InTouchList() {
