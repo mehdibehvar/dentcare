@@ -1,6 +1,7 @@
-import styled from '@emotion/styled'
-import { Box } from '@mui/material'
-const LogoBox=styled(Box)(({theme})=>({
+import styled from "@emotion/styled";
+import { Box } from "@mui/material";
+import Image from "next/image";
+const LogoBox = styled(Box)(({ theme }) => ({
   width: "40%",
   height: "100%",
   backgroundColor: "#fafafa",
@@ -11,7 +12,7 @@ const LogoBox=styled(Box)(({theme})=>({
   paddingLeft: "30px",
   position: "absolute",
   left: "-25px",
-  ":after":{
+  ":after": {
     content: '""',
     position: "absolute",
     right: "-15px",
@@ -22,29 +23,30 @@ const LogoBox=styled(Box)(({theme})=>({
     zIndex: "100",
     backgroundColor: "#fafafa",
   },
-  span:{
-    paddingTop: "21px",
-    paddingLeft:theme.spacing(0.5),
-    transition:"all 1s ease",
-   ":hover":{
-    color:theme.palette.secondary.main,
-    transform:'scale(1.1)'
-   }
+ '& .subtitle':{
+    fontSize: "24px",
+    marginTop: "30px",
+    transition: "all 1s ease",
+    ":hover": {
+      color: theme.palette.secondary.main,
+      transform: "scale(1.1)",
+    },
+    [theme.breakpoints.down("sm")]: {
+   display: "none",
+    },
   },
-  i:{
-    fontSize: 30,
-    transition:"all 1s ease",
-    ":hover":{
-     color:theme.palette.secondary.main,
-     transform:'scale(1.1)'
-    }
-  }
-}))
+}));
 export default function LogoWrapper() {
   return (
     <LogoBox color="primary.main">
-        <span>
-          DentCare</span><i  className={`fa fa-tooth`}></i>
+
+      <div className="kapakana-font subtitle"><span>Dr Bita Behvar</span></div>
+      <Image
+        src="/assets/images/logos/suntooth-scaleable.svg"
+        alt="logo"
+        width={40}
+        height={40}
+      />
     </LogoBox>
-  )
+  );
 }

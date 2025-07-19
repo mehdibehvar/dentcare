@@ -5,18 +5,33 @@ import ScrollUpIcon from "./ScrollUpIcon";
 import Footer from "./footer/Footer";
 
 export default function Layout({ children }) {
-  const hostname = typeof window !== "undefined" ? window.location.hostname : "";
+  const hostname =
+    typeof window !== "undefined" ? window.location.hostname : "";
 
   const verificationTag =
     hostname === "suntooth.ir"
       ? "GExUKOntz8gtKWiCsZk4YkMF0yfaNdDd4NPlR3Lih0E"
       : hostname === "dentistbitabehvar.vercel.app"
-        ? "googlebbb45659266ed9d6"
-        : "GExUKOntz8gtKWiCsZk4YkMF0yfaNdDd4NPlR3Lih0E";
+      ? "googlebbb45659266ed9d6"
+      : "GExUKOntz8gtKWiCsZk4YkMF0yfaNdDd4NPlR3Lih0E";
   return (
     <>
       <Head>
-        <link rel="icon" href="/favicons/favicon.ico" />
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicons/favicon-96x96.png"
+          sizes="96x96"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
+        <link rel="shortcut icon" href="/favicons/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/favicons/apple-touch-icon.png"
+        />
+        <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+        <link rel="manifest" href="/favicons/site.webmanifest" />
         {verificationTag && (
           <meta name="google-site-verification" content={verificationTag} />
         )}
@@ -35,13 +50,13 @@ export default function Layout({ children }) {
           property="og:description"
           content="بهترین دندانپزشک در بوشهر با خدمات کامل و تخصصی."
         />
-        <meta
-          property="og:image"
-          content="http://suntooth.ir/og-image.png"
-        />
+        <meta property="og:image" content="http://suntooth.ir/og-image.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="دندانپزشکی دکتر بیتا بهور در بوشهر" />
+        <meta
+          property="og:image:alt"
+          content="دندانپزشکی دکتر بیتا بهور در بوشهر"
+        />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:url" content="http://suntooth.ir" />
         <meta name="twitter:card" content="summary_large_image" />
