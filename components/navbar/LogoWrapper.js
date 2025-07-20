@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Box } from "@mui/material";
+import Logo from "components/logo";
 import Image from "next/image";
 const LogoBox = styled(Box)(({ theme }) => ({
   width: "40%",
@@ -35,18 +36,26 @@ const LogoBox = styled(Box)(({ theme }) => ({
    display: "none",
     },
   },
+  svg: {
+      transition: "all 1s ease",
+      ":hover": {
+        fill: theme.palette.secondary.main,
+        transform: "scale(1.1)",
+    },
+  },
 }));
 export default function LogoWrapper() {
   return (
     <LogoBox color="primary.main">
 
       <div className="kapakana-font subtitle"><span>Dr Bita Behvar</span></div>
-      <Image
-        src="/assets/images/logos/suntooth-scaleable.svg"
+      {/* <Image
+        src="/assets/images/logos/suntooth-1100-950.svg"
         alt="logo"
         width={40}
         height={40}
-      />
+      /> */}
+      <Logo details={{width: 40, height: 40, alt: "دندانپزشکی دکتر بیتا بهور",toothColor:"#FF2DD1"}}/>
     </LogoBox>
   );
 }

@@ -50,9 +50,9 @@ export default function Layout({ children }) {
           property="og:description"
           content="بهترین دندانپزشک در بوشهر با خدمات کامل و تخصصی."
         />
-        <meta property="og:image" content="http://suntooth.ir/og-image.png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        <meta property="og:image" content="https://dentistbitabehvar.vercel.app/assets/images/logos/suntooth-1100-950.png" />
+        <meta property="og:image:width" content="1100" />
+        <meta property="og:image:height" content="950" />
         <meta
           property="og:image:alt"
           content="دندانپزشکی دکتر بیتا بهور در بوشهر"
