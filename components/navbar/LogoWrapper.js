@@ -43,6 +43,11 @@ const LogoBox = styled(Box)(({ theme }) => ({
         transform: "scale(1.1)",
     },
   },
+  [theme.breakpoints.up("xl")]: {
+    left: "-15%",
+    justifyContent: "center",
+    width: "50%",
+  },
 }));
 export default function LogoWrapper() {
   return (

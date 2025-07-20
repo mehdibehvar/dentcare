@@ -30,7 +30,7 @@ export default function Layout({ children }) {
           sizes="180x180"
           href="/favicons/apple-touch-icon.png"
         />
-        <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+        <meta name="apple-mobile-web-app-title" content="Dr Bita Behvar" />
         <link rel="manifest" href="/favicons/site.webmanifest" />
         {verificationTag && (
           <meta name="google-site-verification" content={verificationTag} />
