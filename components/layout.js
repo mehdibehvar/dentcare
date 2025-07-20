@@ -58,7 +58,7 @@ export default function Layout({ children }) {
           content="دندانپزشکی دکتر بیتا بهور در بوشهر"
         />
         <meta property="og:image:type" content="image/png" />
-        <meta property="og:url" content="http://suntooth.ir" />
+        <meta property="og:url" content="https://dentistbitabehvar.vercel.app" />
         <meta name="twitter:card" content="summary_large_image" />
 
         {/* 👇 داده ساختاریافته برای گوگل */}
