@@ -16,15 +16,17 @@ const LogoBox = styled(Box)(({ theme }) => ({
   ":after": {
     content: '""',
     position: "absolute",
-    right: "-15px",
-    width: "40px",
-    height: "40px",
-    transform: "rotate(45deg)",
-    webkitTransform: "rotate(45deg)",
-    zIndex: "100",
-    backgroundColor: "#fafafa",
+    top: "50%",
+    transform: "translateY(-50%)",
+    right: "-16px",
+    width: 0,
+    height: 0,
+    borderTop: "20px solid transparent",
+    borderBottom: "20px solid transparent",
+    borderLeft: "20px solid #fafafa",
+    zIndex: 100,
   },
- '& .subtitle':{
+  '& .subtitle': {
     fontSize: "24px",
     marginTop: "30px",
     transition: "all 1s ease",
@@ -33,20 +35,24 @@ const LogoBox = styled(Box)(({ theme }) => ({
       transform: "scale(1.1)",
     },
     [theme.breakpoints.down("sm")]: {
-   display: "none",
+      fontSize: "18px",
     },
   },
   svg: {
-      transition: "all 1s ease",
-      ":hover": {
-        fill: theme.palette.secondary.main,
-        transform: "scale(1.1)",
+    transition: "all 1s ease",
+    ":hover": {
+      fill: theme.palette.secondary.main,
+      transform: "scale(1.1)",
     },
   },
   [theme.breakpoints.up("xl")]: {
     left: "-15%",
     justifyContent: "center",
     width: "50%",
+  },
+  [theme.breakpoints.down("sm")]: {
+    paddingLeft: "14px",
+    paddingRight: 0,
   },
 }));
 export default function LogoWrapper() {
@@ -60,7 +66,7 @@ export default function LogoWrapper() {
         width={40}
         height={40}
       /> */}
-      <Logo details={{width: 40, height: 40, alt: "دندانپزشکی دکتر بیتا بهور",toothColor:"#FF2DD1"}}/>
+      <Logo details={{ width: 40, height: 40, alt: "دندانپزشکی دکتر بیتا بهور", toothColor: "#FF2DD1" }} />
     </LogoBox>
   );
 }
