@@ -89,7 +89,7 @@ export default function Footer() {
           <RightBox>
             <SocialIcons
               gap={"20px"}
-              iconColor={"#63C8FF"}
+              iconColor={"#FFCC00"}
             />
           </RightBox>
         </Grid>

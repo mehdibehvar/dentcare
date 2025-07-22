@@ -17,7 +17,7 @@ align-items: center;
 }
 @media screen and (max-width:600px) {
     .topbarList li span{
-        font-size:14px;
+        font-size:13px;
         font-weight: 400;
     }
     .topbarList{
