@@ -44,15 +44,23 @@ const RingAnimation = styled(MobileFriendly)(({ theme }) => ({
   '@keyframes ring': {
     '0%': {
       transform: 'scale(1)',
-      boxShadow: '0 0 5px 2px rgba(99, 200, 255,0.4)', 
+      color: `${theme.palette.primary.main}`,
     },
-    '50%': {
+    '25%': {
       transform: 'scale(1.2)', // slightly increase the size
-      boxShadow: '0 0 15px 5px rgba(99, 200, 255,1)', // increase glow effect
+      color: ` ${theme.palette.secondary.main}`, // increase glow effect
+    },
+      '50%': {
+      transform: 'scale(1.2)', // slightly increase the size
+      color: ` ${theme.palette.secondary.light}`, // increase glow effect
+    },
+      '50%': {
+      transform: 'scale(1.2)', // slightly increase the size
+      color:"#75f343ff" , // increase glow effect
     },
     '100%': {
       transform: 'scale(1)', // return to original size
-      boxShadow: '0 0 5px 2px rgba(99, 200, 255,0.4)', // return to soft glow
+      color: "#00ff2aff", // return to soft glow
     }
   }
 }));

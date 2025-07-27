@@ -16,7 +16,7 @@ const Summary = styled("li")(({ theme }) => ({
     marginLeft: theme.spacing(1),
   },
   "& span": {
-    color: theme.palette.text.secondary,
+    color: theme.palette.text.primary,
   },
 }));
 export default function TabContent({ tabDisplay, tabInfo }) {
@@ -61,7 +61,7 @@ export default function TabContent({ tabDisplay, tabInfo }) {
             variant="caption"
             mr={3}
             component={"p"}
-            sx={{ color: "text.disabled" }}
+            sx={{ color: "text.primary" }}
           >
             {description}
           </Typography>
