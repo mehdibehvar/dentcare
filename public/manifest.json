@@ -1,0 +1,21 @@
+{
+  "name": "Dr Bita Behvar",
+  "short_name": "Dr Bita",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#640D5F",
+  "background_color": "#640D5F",
+  "display": "standalone"
+}

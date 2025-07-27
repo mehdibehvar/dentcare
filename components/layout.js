@@ -5,6 +5,7 @@ import ScrollUpIcon from "./ScrollUpIcon";
 import Footer from "./footer/Footer";
 
 export default function Layout({ children }) {
+  // app/layout.tsx یا app/layout.js
   const hostname =
     typeof window !== "undefined" ? window.location.hostname : "";
 
@@ -20,18 +21,18 @@ export default function Layout({ children }) {
         <link
           rel="icon"
           type="image/png"
-          href="/favicons/favicon-96x96.png"
+          href="/favicon-96x96.png"
           sizes="96x96"
         />
-        <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
-        <link rel="shortcut icon" href="/favicons/favicon.ico" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/favicons/apple-touch-icon.png"
+          href="/apple-icon.png"
         />
         <meta name="apple-mobile-web-app-title" content="Dr Bita Behvar" />
-        <link rel="manifest" href="/favicons/site.webmanifest" />
+        <link rel="manifest" href="/manifest.json" />
         {verificationTag && (
           <meta name="google-site-verification" content={verificationTag} />
         )}
@@ -50,9 +51,9 @@ export default function Layout({ children }) {
           property="og:description"
           content="بهترین دندانپزشک در بوشهر با خدمات کامل و تخصصی."
         />
-        <meta property="og:image" content="https://suntooth.ir/assets/images/logos/suntooth-1100-950.png" />
-        <meta property="og:image:width" content="1100" />
-        <meta property="og:image:height" content="950" />
+        <meta property="og:image" content="https://suntooth.ir/logo-apple-1024.png" />
+        <meta property="og:image:width" content="1024" />
+        <meta property="og:image:height" content="1024" />
         <meta
           property="og:image:alt"
           content="دندانپزشکی دکتر بیتا بهور در بوشهر"
